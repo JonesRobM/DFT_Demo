@@ -1,0 +1,19 @@
+#!/usr/bin/env perl
+
+$delay = 0;
+$delaymax = 1500;
+$incr = 50;
+
+`rm -r td.general_delay*`;
+
+do{
+  print("TD propagation for a delay of $delay");
+  $sed_param1="s/DELAY/${delay}/g";
+  `sed "$sed_param1" inp_ref > inp`;
+  `mpirun -np 10 ~/Oct/bin/octopus > log`;
+  `~/Oct/bin/oct-conductivity $> log`;
+  `mv td.general td.general_delay${delay}`;
+
+  $delay=$delay+$incr;
+}while($delay <= $delaymax);
+

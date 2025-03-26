@@ -1,0 +1,38 @@
+CalculationMode = gs
+Debug = trace
+BoxShape=minimum
+Radius = 7.0
+Spacing = 0.3
+XYZCoordinates = 'mol.xyz'
+OutputInterval = 250
+
+
+ExtraStates = 10
+ExtraStatesToConverge = 10
+DoSComputePDoS = yes
+
+%Output
+  dos
+  potential
+  matrix_elements
+  potential
+  geometry
+  wfs
+  current
+  potential_gradient
+  energy_density
+  xc_density
+  matrix_elements
+  pol_density
+%
+ParStates = no
+
+%OutputMatrixElements
+  dipole
+%
+
+OutputFormat = cube + plane_x + plane_y + plane_z + axis_x + axis_y + axis_z + integrate_xy + integrate_xz + integrate_yz + xyz
+
+MaximumIter = -1
+
+ExperimentalFeatures = yes

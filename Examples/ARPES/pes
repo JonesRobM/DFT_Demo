@@ -1,0 +1,102 @@
+Input: [AllElectronType = no]
+Input: [PseudopotentialSet = standard]
+Reading Coordinates from Coordinates block
+Info: default mass for species tanh:    1.000000 amu.
+Info: default vdW radius for species tanh:    0.000000 [b]
+
+****************************** Species *******************************
+Species "tanh" is a user-defined potential.
+   Potential =  -U0*(step(x+aa/2)*(1-step(x-aa/2)))*(1+tanh(x+x0))*(1+tanh(x0-x))*(1+tanh(y+y0))*(1+tanh(-y+y0))
+Number of orbitals:      8
+**********************************************************************
+
+
+** Warning:
+**   For systems that  are periodic in 1D, the interaction between
+**   ions is currently not implemented. This affects the calculation
+**   of total energy and forces.
+
+
+     8 k-points generated from parameters :
+ ---------------------------------------------------
+    n =    1    1
+
+    s1  =  0.50  0.50
+
+   index |      weight  |             coordinates              |
+       1 |     1.000000 |    0.000000    0.000000  |
+       2 |     0.000000 |   -0.500000    0.000000  |
+       3 |     0.000000 |   -0.333333    0.000000  |
+       4 |     0.000000 |   -0.166667    0.000000  |
+       5 |     0.000000 |    0.000000    0.000000  |
+       6 |     0.000000 |    0.166667    0.000000  |
+       7 |     0.000000 |    0.333333    0.000000  |
+       8 |     0.000000 |    0.500000    0.000000  |
+
+Input: [SpinComponents = unpolarized]
+Input: [SmearingFunction = semiconducting]
+Input: [SymmetrizeDensity = no]
+
+*************************** Postprocessing ***************************
+Will process flux-method data.
+
+Input: [PES_Flux_Momenutum_Grid = cartesian]
+Energy grid (Emin, Emax, DE) [H]:  (   1.711,   1.911, 0.10E-01)
+Momentum linear grid (Pmin, Pmax, DP) [me*bH(2pi/h)]:  (   1.850,   1.955, 0.14E+00)
+Input: [PES_Flux_ARPES_grid = yes]
+Number of points with E<p//^2/2 = 0 [of 168]
+
+************************** Parallelization ***************************
+Info: Octopus will run in *serial*
+**********************************************************************
+
+Info: Time-dependent restart information will be read from 'restart/td'.
+
+************************** Kpoint selection **************************
+Will use a zero-weight path in reciprocal space with the following points
+       2    0.000000 |   -0.500000    0.000000 |
+       3    0.000000 |   -0.333333    0.000000 |
+       4    0.000000 |   -0.166667    0.000000 |
+       5    0.000000 |    0.000000    0.000000 |
+       6    0.000000 |    0.166667    0.000000 |
+       7    0.000000 |    0.333333    0.000000 |
+       8    0.000000 |    0.500000    0.000000 |
+
+**********************************************************************
+
+Read PES restart files.
+Zenith axis: (      0.00,       0.00,       1.00)
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+***************** ARPES cut on reciprocal space path *****************
+Done
+**********************************************************************
+
+Info: Finished reading information from 'restart/td'.
+
+Octopus emitted 1 warning.
+
+Parser warning: possible mistakes in input file.
+List of variable assignments not used by parser:
+tdoutput[2][0] = 7.000000
+tdoutput[1][0] = 8.000000
+tdoutput[0][0] = 1.000000
+output[5][0] = 11.000000
+output[4][0] = 1.000000
+output[3][0] = 5.000000
+output[2][0] = 3.000000
+output[1][0] = 2.000000
+output[0][0] = 15.000000
+pes_flux_usememory = 0.000000
+abshape[0][2] = "abs(y)"
+abshape[0][1] = 120.000000
+abshape[0][0] = 30.000000
+tdfunctions[0][2] = "AApr*sin(wpr*(t)/(2*npr))^2*step(Tpr-(t))*step(t)"
+tdfunctions[0][1] = 10008.000000
+tdfunctions[0][0] = "probe"
+tdexternalfields[0][5] = "probe"
+tdexternalfields[0][4] = 1.910992
+tdexternalfields[0][0] = 3.000000
+aapr = 0.012101
+

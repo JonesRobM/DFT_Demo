@@ -1,0 +1,22 @@
+Input: [CasidaSpectrumBroadening = 0.5000E-02 H]
+Input: [CasidaSpectrumEnergyStep = 0.1000E-02 H]
+Input: [CasidaSpectrumMinEnergy = 0.000 H]
+Input: [CasidaSpectrumMaxEnergy = 1.000 H]
+
+Parser warning: possible mistakes in input file.
+List of variable assignments not used by parser:
+species[0][5] = 0.000000
+species[0][4] = -10004.000000
+species[0][3] = 2.000000
+species[0][2] = -10003.000000
+species[0][1] = -7.000000
+species[0][0] = "N"
+coordinates[1][3] = 0.000000
+coordinates[1][2] = 0.000000
+coordinates[1][1] = 1.037200
+coordinates[1][0] = "N"
+coordinates[0][3] = 0.000000
+coordinates[0][2] = 0.000000
+coordinates[0][1] = -1.037200
+coordinates[0][0] = "N"
+

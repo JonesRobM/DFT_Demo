@@ -1,0 +1,451 @@
+    <><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
+                                ___
+                             .-'   `'.
+                            /         \
+                            |         ;
+                            |         |           ___.--,
+                   _.._     |0) ~ (0) |    _.---'`__.-( (_.
+            __.--'`_.. '.__.\    '--. \_.-' ,.--'`     `""`
+           ( ,.--'`   ',__ /./;   ;, '.__.'`    __
+           _`) )  .---.__.' / |   |\   \__..--""  """--.,_
+          `---' .'.''-._.-'`_./  /\ '.  \ _.-~~~````~~~-._`-.__.'
+                | |  .' _.-' |  |  \  \  '.               `~---`
+                 \ \/ .'     \  \   '. '-._)
+                  \/ /        \  \    `=.__`~-.
+             jgs  / /\         `) )    / / `"".`\
+            , _.-'.'\ \        / /    ( (     / /
+             `--~`   ) )    .-'.'      '.'.  | (
+                    (/`    ( (`          ) )  '-;
+                     `      '-;         (-'
+
+    This program is free software; you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation; either version 2, or (at your option)
+    any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program; if not, write to the Free Software
+    Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
+
+    <><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
+
+                           Running octopus
+
+Version                : 13.0
+Commit                 :
+Configuration time     : Tue Jan 23 14:23:37 GMT 2024
+Configuration options  : maxdim3 mpi sse2 libxc5 libxc_fxc libxc_kxc
+Optional libraries     : metis pfft sparskit
+Architecture           : x86_64
+C compiler             : mpicc (gcc)
+C compiler flags       : -O3 -P
+C++ compiler           : mpicxx (g++)
+C++ compiler flags     : -g -O2
+Fortran compiler       : mpif90 (gfortran) (GCC version 7.5.0)
+Fortran compiler flags : -O3
+
+             The octopus is swimming in Sisyphus (Linux)
+
+
+            Calculation started on 2025/03/25 at 20:38:54
+
+
+************************** Calculation Mode **************************
+Input: [CalculationMode = unocc]
+**********************************************************************
+
+
+******************************* Space ********************************
+Octopus will run in 3 dimension(s).
+Octopus will treat the system as periodic in 2 dimension(s).
+**********************************************************************
+
+
+** Warning:
+**   Support for mixed periodicity systems is under development.
+**   It might not work or produce wrong results.
+
+Input: [AllElectronType = no]
+Input: [PseudopotentialSet = hgh_lda]
+Reading Coordinates from ReducedCoordinates block
+
+****************************** Species *******************************
+  Species 'B'
+    type             : pseudopotential
+    file             : '/usr/local/share/octopus/pseudopotentials/HGH/lda//B.hgh'
+    file format      : HGH
+    valence charge   : 3.0
+    atomic number    :   5
+    form on file     : kleinman-bylander
+    lmax             : 1
+    llocal           : -1
+    projectors per l : 3
+    total projectors : 6
+    application form : kleinman-bylander
+    orbitals         :  4
+    bound orbitals   :  4
+
+  Species 'N'
+    type             : pseudopotential
+    file             : '/usr/local/share/octopus/pseudopotentials/HGH/lda//N.hgh'
+    file format      : HGH
+    valence charge   : 5.0
+    atomic number    :   7
+    form on file     : kleinman-bylander
+    lmax             : 1
+    llocal           : -1
+    projectors per l : 3
+    total projectors : 6
+    application form : kleinman-bylander
+    orbitals         :  4
+    bound orbitals   :  4
+
+**********************************************************************
+
+
+***************************** Symmetries *****************************
+Space group No.  187
+International: P-6m2
+Schoenflies: D3h^1
+  Index                Rotation matrix                      Fractional translations
+    1 :     1   0   0     0   1   0     0   0   1      0.000000    0.000000    0.000000
+    2 :    -1  -1   0     1   0   0     0   0  -1      0.000000    0.000000    0.000000
+    3 :     0   1   0    -1  -1   0     0   0   1      0.000000    0.000000    0.000000
+    4 :     1   0   0     0   1   0     0   0  -1      0.000000    0.000000    0.000000
+    5 :    -1  -1   0     1   0   0     0   0   1      0.000000    0.000000    0.000000
+    6 :     0   1   0    -1  -1   0     0   0  -1      0.000000    0.000000    0.000000
+    7 :     0  -1   0    -1   0   0     0   0  -1      0.000000    0.000000    0.000000
+    8 :     1   1   0     0  -1   0     0   0   1      0.000000    0.000000    0.000000
+    9 :    -1   0   0     1   1   0     0   0  -1      0.000000    0.000000    0.000000
+   10 :     0  -1   0    -1   0   0     0   0   1      0.000000    0.000000    0.000000
+   11 :     1   1   0     0  -1   0     0   0  -1      0.000000    0.000000    0.000000
+   12 :    -1   0   0     1   1   0     0   0   1      0.000000    0.000000    0.000000
+Info: The system has    12 symmetries that can be used.
+**********************************************************************
+
+
+** Warning:
+**   The spacing has been modified to make it commensurate with the periodicity of the system.
+
+Input: [CurvMethod = curv_affine]
+Input: [DerivativesStencil = stencil_stargeneral]
+
+****************************** Lattice *******************************
+  Lattice Vectors [A]
+    2.502813    0.000000    0.000000
+   -1.251407    2.167500    0.000000
+  Cell area   =             5.4248 [A^2]
+  Reciprocal-Lattice Vectors [A^-1]
+    2.510449    1.449408   -0.000000
+    0.000000    2.898817    0.000000
+  Cell angles [degree]
+    alpha =   90.000
+    beta  =   90.000
+    gamma =  120.000
+**********************************************************************
+
+
+   index |      weight  |             coordinates              |
+       1 |     0.031250 |    0.000000    0.000000    0.000000  |
+       2 |     0.031250 |    0.027778    0.027778    0.000000  |
+       3 |     0.031250 |    0.055556    0.055556    0.000000  |
+       4 |     0.031250 |    0.083333    0.083333    0.000000  |
+       5 |     0.031250 |    0.111111    0.111111    0.000000  |
+       6 |     0.031250 |    0.138889    0.138889    0.000000  |
+       7 |     0.031250 |    0.166667    0.166667    0.000000  |
+       8 |     0.031250 |    0.194444    0.194444    0.000000  |
+       9 |     0.031250 |    0.222222    0.222222    0.000000  |
+      10 |     0.031250 |    0.250000    0.250000    0.000000  |
+      11 |     0.031250 |    0.277778    0.277778    0.000000  |
+      12 |     0.031250 |    0.305556    0.305556    0.000000  |
+      13 |     0.031250 |    0.333333    0.333333    0.000000  |
+      14 |     0.031250 |    0.357143    0.285714    0.000000  |
+      15 |     0.031250 |    0.380952    0.238095    0.000000  |
+      16 |     0.031250 |    0.404762    0.190476    0.000000  |
+      17 |     0.031250 |    0.428571    0.142857    0.000000  |
+      18 |     0.031250 |    0.452381    0.095238    0.000000  |
+      19 |     0.031250 |    0.476190    0.047619    0.000000  |
+      20 |     0.031250 |    0.500000   -0.000000    0.000000  |
+      21 |     0.031250 |    0.458333    0.000000    0.000000  |
+      22 |     0.031250 |    0.416667    0.000000    0.000000  |
+      23 |     0.031250 |    0.375000   -0.000000    0.000000  |
+      24 |     0.031250 |    0.333333   -0.000000    0.000000  |
+      25 |     0.031250 |    0.291667    0.000000    0.000000  |
+      26 |     0.031250 |    0.250000   -0.000000    0.000000  |
+      27 |     0.031250 |    0.208333    0.000000    0.000000  |
+      28 |     0.031250 |    0.166667   -0.000000    0.000000  |
+      29 |     0.031250 |    0.125000   -0.000000    0.000000  |
+      30 |     0.031250 |    0.083333    0.000000    0.000000  |
+      31 |     0.031250 |    0.041667    0.000000    0.000000  |
+      32 |     0.031250 |    0.000000    0.000000    0.000000  |
+
+Input: [SpinComponents = unpolarized]
+Input: [SmearingFunction = semiconducting]
+Input: [SymmetrizeDensity = no]
+
+******************************* States *******************************
+Total electronic charge  =        8.000
+Number of states         =       12
+States block-size        =        4
+**********************************************************************
+
+
+************************** Parallelization ***************************
+Info: Octopus will run in *serial*
+**********************************************************************
+
+Info: Generating weights for finite-difference discretization of x-gradient
+Info: Generating weights for finite-difference discretization of y-gradient
+Info: Generating weights for finite-difference discretization of z-gradient
+Info: Generating weights for finite-difference discretization of Laplacian
+
+******************************** Grid ********************************
+Simulation Box:
+  Type = parallelepiped
+  Lengths [A] = (   2.503,   2.503,  21.167)
+Main mesh:
+  Spacing [A] = ( 0.193, 0.193, 0.200)    volume/point [A^3] =      0.00642
+  # inner mesh =      17745
+  # total mesh =      45617
+  Grid Cutoff [eV] =   940.075316    Grid Cutoff [Ry] =    69.094267
+**********************************************************************
+
+Info: states-block size = 1.4 MiB
+Input: [StatesPack = yes]
+Input: [StatesOrthogonalization = cholesky_serial]
+Info: the XCFunctional has been selected to match the pseudopotentials
+      used in the calculation.
+
+**************************** Theory Level ****************************
+Input: [TheoryLevel = kohn_sham]
+
+Exchange-correlation:
+  Exchange
+    Slater exchange (LDA)
+    [1] P. A. M. Dirac.,  Math. Proc. Cambridge Philos. Soc. 26, 376 (1930)
+    [2] F. Bloch.,  Z. Phys. 57, 545 (1929)
+  Correlation
+    Perdew & Zunger (Modified) (LDA)
+    [1] J. P. Perdew and A. Zunger.,  Phys. Rev. B 23, 5048 (1981)
+
+**********************************************************************
+
+
+****************************** Hartree *******************************
+Input: [DressedOrbitals = no]
+The chosen Poisson solver is 'fast Fourier transform'
+Input: [PoissonFFTKernel = planar]
+**********************************************************************
+
+Info: FFT grid dimensions       = 13 x 13 x 225
+      Total grid size           = 38025 (      0.3 MiB )
+      Inefficient FFT grid. A better grid would be: 14 14 225
+Info: Poisson Cutoff Radius     =  22.5 A
+Input: [FilterPotentials = filter_TS]
+Info: Pseudopotential for B
+  Radii for localized parts:
+    local part     =  1.1 A
+    non-local part =  1.2 A
+    orbitals       =  5.6 A
+
+Info: Pseudopotential for N
+  Radii for localized parts:
+    local part     =  1.5 A
+    non-local part =  1.1 A
+    orbitals       =  4.2 A
+
+Input: [RelativisticCorrection = non_relativistic]
+Input: [DFTULevel = dft_u_none]
+Input: [MagneticConstrain = 0]
+
+****************** Approximate memory requirements *******************
+Mesh
+  global  :       0.7 MiB
+  local   :       1.7 MiB
+  total   :       2.4 MiB
+
+States
+  real    :     133.6 MiB (par_kpoints + par_states + par_domains)
+  complex :     267.3 MiB (par_kpoints + par_states + par_domains)
+
+**********************************************************************
+
+Info: Generating external potential
+      done.
+Info: Octopus initialization completed.
+Info: Starting calculation mode.
+Info: Blocks of states
+      Block       1 contains       4 states:       1 -       4
+      Block       2 contains       4 states:       5 -       8
+      Block       3 contains       4 states:       9 -      12
+
+**************************** Eigensolver *****************************
+Input: [Eigensolver = cg]
+Input: [Preconditioner = pre_filter]
+Info: Generating weights for finite-difference discretization of Preconditioner
+Input: [PreconditionerFilterFactor = 0.6000]
+Input: [SubspaceDiagonalization = standard]
+**********************************************************************
+
+Info: Unoccupied states restart information will be read from 'restart/gs'.
+
+             Info: Reading states. 2025/03/25 at 20:38:56
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+          Info: States reading done. 2025/03/25 at 20:38:59
+
+Info: Finished reading information from 'restart/gs'.
+Info: Ground-state restart information will be read from 'restart/gs'.
+Info: Finished reading information from 'restart/gs'.
+Info: SCF using complex wavefunctions.
+Info: The code will run in band structure mode.
+      No restart information will be printed.
+Info: Starting calculation of unoccupied states.
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+***************** Unoccupied states iteration #    1 *****************
+Converged states:      1
+
+#  State  KPoint  Eigenvalue [eV]  Occupation    Error
+      1       1      -23.258951    2.000000   ( 8.0E-08)
+      1      32      -23.258951    2.000000   ( 8.0E-08)
+      1      31      -23.225056    2.000000   ( 8.0E-08)
+      1       2      -23.213728    2.000000   ( 8.0E-08)
+      1      30      -23.123740    2.000000   ( 8.1E-08)
+      1       3      -23.078709    2.000000   ( 8.1E-08)
+      1      29      -22.956160    2.000000   ( 8.1E-08)
+      1       4      -22.855952    2.000000   ( 8.1E-08)
+
+  [output of 111 eigenvalues skipped: maximum error = 1.6E-07]
+
+      4      19       -6.840281    2.000000   ( 1.2E-07)
+      4      18       -6.741386    2.000000   ( 1.3E-07)
+      4      17       -6.584664    2.000000   ( 1.3E-07)
+      4      11       -6.486367    2.000000   ( 1.3E-07)
+      4      16       -6.385003    2.000000   ( 1.2E-07)
+      4      15       -6.169767    2.000000   ( 1.1E-07)
+      4      12       -6.050862    2.000000   ( 1.0E-07)
+      4      14       -5.986810    2.000000   ( 1.0E-07)
+      4      13       -5.910030    2.000000   ( 8.1E-08)
+      5      13       -1.677374    0.000000   ( 1.3E-07)
+      5      14       -1.637786    0.000000   ( 1.2E-07)
+      5      12       -1.568636    0.000000   ( 1.3E-07)
+      5      15       -1.566306    0.000000   ( 1.2E-07)
+      5      20       -1.563294    0.000000   ( 1.1E-07)
+      5      19       -1.555199    0.000000   ( 1.1E-07)
+      5      18       -1.535641    0.000000   ( 1.1E-07)
+      5      16       -1.523226    0.000000   ( 1.3E-07)
+
+  [output of 240 eigenvalues skipped: maximum error = 4.9E-03]
+
+     11      12        9.633896    0.000000   ( 2.0E-07)
+     12      15        9.736368    0.000000   ( 9.2E-06)
+     12      12        9.947518    0.000000   ( 3.1E-07)
+     10      13       10.089197    0.000000   ( 2.5E-07)
+     11      14       10.108367    0.000000   ( 8.7E-07)
+     12      14       10.270576    0.000000   ( 1.3E-05)
+     11      13       10.480026    0.000000   ( 9.3E-07)
+     12      13       10.787434    0.000000   ( 3.2E-05)
+
+Density of states:
+
+---------------------------------------------------------%------------
+---------------------------------------------------------%------------
+--------------------------------------------------------%%%-----------
+------------------------------------------------------%-%%%-%----%----
+-------------------------------%------------%----%%-%%%-%%%-%%%%-%----
+--------------------------%----%------------%--%%%%-%%%-%%%-%%%%-%----
+------------------------%%%%---%------------%--%%%%%%%%%%%%%%%%%-%----
+%------%---------%--%---%%%%--%%-%----------%%-%%%%%%%%%%%%%%%%%%%%%--
+%%%---%%%-------%%%-%%%-%%%%%%%%-%%%--------%%%%%%%%%%%%%%%%%%%%%%%%%-
+%%%%%%%%%-------%%%%%%%%%%%%%%%%%%%%--------%%%%%%%%%%%%%%%%%%%%%%%%%%
+                               ^
+
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+***************** Unoccupied states iteration #    2 *****************
+Converged states:     10
+
+#  State  KPoint  Eigenvalue [eV]  Occupation    Error
+      1       1      -23.258951    2.000000   ( 8.0E-08)
+      1      32      -23.258951    2.000000   ( 8.0E-08)
+      1      31      -23.225056    2.000000   ( 8.0E-08)
+      1       2      -23.213728    2.000000   ( 8.0E-08)
+      1      30      -23.123740    2.000000   ( 8.1E-08)
+      1       3      -23.078709    2.000000   ( 8.1E-08)
+      1      29      -22.956160    2.000000   ( 8.1E-08)
+      1       4      -22.855952    2.000000   ( 8.1E-08)
+
+  [output of 111 eigenvalues skipped: maximum error = 9.8E-08]
+
+      4      19       -6.840281    2.000000   ( 7.2E-09)
+      4      18       -6.741386    2.000000   ( 9.6E-09)
+      4      17       -6.584664    2.000000   ( 9.1E-09)
+      4      11       -6.486367    2.000000   ( 1.1E-08)
+      4      16       -6.385003    2.000000   ( 1.2E-08)
+      4      15       -6.169767    2.000000   ( 2.4E-08)
+      4      12       -6.050862    2.000000   ( 2.6E-08)
+      4      14       -5.986810    2.000000   ( 4.3E-08)
+      4      13       -5.910030    2.000000   ( 4.3E-08)
+      5      13       -1.677374    0.000000   ( 7.3E-08)
+      5      14       -1.637786    0.000000   ( 8.0E-08)
+      5      12       -1.568636    0.000000   ( 8.0E-08)
+      5      15       -1.566306    0.000000   ( 8.0E-08)
+      5      20       -1.563294    0.000000   ( 8.3E-08)
+      5      19       -1.555199    0.000000   ( 8.3E-08)
+      5      18       -1.535641    0.000000   ( 8.0E-08)
+      5      16       -1.523226    0.000000   ( 7.8E-08)
+
+  [output of 240 eigenvalues skipped: maximum error = 4.3E-03]
+
+     11      12        9.633896    0.000000   ( 8.5E-08)
+     12      15        9.736368    0.000000   ( 6.9E-06)
+     12      12        9.947518    0.000000   ( 7.4E-08)
+     10      13       10.089197    0.000000   ( 7.9E-08)
+     11      14       10.108367    0.000000   ( 2.2E-07)
+     12      14       10.270576    0.000000   ( 6.3E-06)
+     11      13       10.480026    0.000000   ( 1.6E-07)
+     12      13       10.787434    0.000000   ( 3.1E-05)
+
+Density of states:
+
+---------------------------------------------------------%------------
+---------------------------------------------------------%------------
+--------------------------------------------------------%%%-----------
+------------------------------------------------------%-%%%-%----%----
+-------------------------------%------------%----%%-%%%-%%%-%%%%-%----
+--------------------------%----%------------%--%%%%-%%%-%%%-%%%%-%----
+------------------------%%%%---%------------%--%%%%%%%%%%%%%%%%%-%----
+%------%---------%--%---%%%%--%%-%----------%%-%%%%%%%%%%%%%%%%%%%%%--
+%%%---%%%-------%%%-%%%-%%%%%%%%-%%%--------%%%%%%%%%%%%%%%%%%%%%%%%%-
+%%%%%%%%%-------%%%%%%%%%%%%%%%%%%%%--------%%%%%%%%%%%%%%%%%%%%%%%%%%
+                               ^
+
+**********************************************************************
+
+
+             Calculation ended on 2025/03/25 at 20:39:18
+
+                          Walltime:  23.760s
+
+Octopus emitted 1 warning.
+
+Octopus used 1 experimental feature:
+
+  Since you used one or more experimental features, results are likely
+  wrong and should not  be considered as valid scientific data.  Check
+
+  http://octopus-code.org/experimental_features
+
+  or contact the octopus developers for details.
+

@@ -1,0 +1,21 @@
+#!/usr/bin/env perl
+
+$delay = 0;
+$delaymax = 1500;
+$incr = 50;
+
+$cmd = q(awk '{print 0 "  " $1 " " $2}' td.general_delay0/conductivity > result_tmp);
+$n = system($cmd);
+$delay=$delay+$incr;
+
+do{
+  `echo " " >> result_tmp`;
+  $cmd = qq(awk '{print $delay "  " \$1 " " \$2}' td.general_delay$delay/conductivity >> result_tmp);
+  $n = system($cmd);
+
+  $delay=$delay+$incr;
+}while($delay <= $delaymax);
+
+`cat result_tmp | grep -v "#" > result.dat`;
+`rm result_tmp`;
+

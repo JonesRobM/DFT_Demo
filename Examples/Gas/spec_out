@@ -1,0 +1,40 @@
+
+************************** Spectrum Options **************************
+Input: [PropagationSpectrumType = AbsorptionSpectrum]
+Input: [SpectrumMethod = fourier]
+Input: [PropagationSpectrumDampMode = polynomial]
+Input: [PropagationSpectrumTransform = sine]
+Input: [PropagationSpectrumStartTime = 0.000 hbar/H]
+Input: [PropagationSpectrumEndTime = -1.000 hbar/H]
+Input: [PropagationSpectrumEnergyStep = 0.5141E-02 H]
+Input: [PropagationSpectrumMinEnergy = 0.000 H]
+Input: [PropagationSpectrumMaxEnergy = 2.828 H]
+Input: [PropagationSpectrumDampFactor = -1.000 hbar/H^-1]
+Input: [PropagationSpectrumSigmaDiagonalization = no]
+**********************************************************************
+
+
+Parser warning: possible mistakes in input file.
+List of variable assignments not used by parser:
+tdoutput[2][0] = 6.000000
+tdoutput[1][0] = 1.000000
+tdoutput[0][0] = 7.000000
+tdfunctions[0][2] = "electric_amplitude*(sin(pi/stime*t))^2"
+tdfunctions[0][1] = 10008.000000
+tdfunctions[0][0] = "envelope_function"
+electric_amplitude = 0.053380
+tdexternalfields[0][5] = "envelope_function"
+tdexternalfields[0][4] = 0.056550
+tdexternalfields[0][3] = 0.000000
+tdexternalfields[0][2] = 0.000000
+tdexternalfields[0][1] = 1.000000
+tdexternalfields[0][0] = 1.000000
+coordinates[0][1] = 0.000000
+coordinates[0][0] = "Hydrogen1D"
+species[0][5] = 1.000000
+species[0][4] = -10006.000000
+species[0][3] = "-1/sqrt(1+(x)^2)"
+species[0][2] = -10012.000000
+species[0][1] = -123.000000
+species[0][0] = "Hydrogen1D"
+

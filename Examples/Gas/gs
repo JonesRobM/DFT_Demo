@@ -1,0 +1,3357 @@
+    <><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
+                                ___
+                             .-'   `'.
+                            /         \
+                            |         ;
+                            |         |           ___.--,
+                   _.._     |0) ~ (0) |    _.---'`__.-( (_.
+            __.--'`_.. '.__.\    '--. \_.-' ,.--'`     `""`
+           ( ,.--'`   ',__ /./;   ;, '.__.'`    __
+           _`) )  .---.__.' / |   |\   \__..--""  """--.,_
+          `---' .'.''-._.-'`_./  /\ '.  \ _.-~~~````~~~-._`-.__.'
+                | |  .' _.-' |  |  \  \  '.               `~---`
+                 \ \/ .'     \  \   '. '-._)
+                  \/ /        \  \    `=.__`~-.
+             jgs  / /\         `) )    / / `"".`\
+            , _.-'.'\ \        / /    ( (     / /
+             `--~`   ) )    .-'.'      '.'.  | (
+                    (/`    ( (`          ) )  '-;
+                     `      '-;         (-'
+
+    This program is free software; you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation; either version 2, or (at your option)
+    any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program; if not, write to the Free Software
+    Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
+
+    <><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
+
+                           Running octopus
+
+Version                : 13.0
+Commit                 :
+Configuration time     : Tue Jan 23 14:23:37 GMT 2024
+Configuration options  : maxdim3 mpi sse2 libxc5 libxc_fxc libxc_kxc
+Optional libraries     : metis pfft sparskit
+Architecture           : x86_64
+C compiler             : mpicc (gcc)
+C compiler flags       : -O3 -P
+C++ compiler           : mpicxx (g++)
+C++ compiler flags     : -g -O2
+Fortran compiler       : mpif90 (gfortran) (GCC version 7.5.0)
+Fortran compiler flags : -O3
+
+             The octopus is swimming in Sisyphus (Linux)
+
+
+            Calculation started on 2025/03/25 at 20:43:19
+
+
+************************** Calculation Mode **************************
+Input: [CalculationMode = gs]
+**********************************************************************
+
+
+******************************* Space ********************************
+Octopus will run in 1 dimension(s).
+Octopus will treat the system as periodic in 0 dimension(s).
+**********************************************************************
+
+Input: [AllElectronType = no]
+Input: [PseudopotentialSet = standard]
+Reading Coordinates from Coordinates block
+Info: default mass for species Hydrogen1D:    1.000000 amu.
+Info: default vdW radius for species Hydrogen1D:    0.000000 [b]
+
+****************************** Species *******************************
+Species "Hydrogen1D" is a user-defined potential.
+   Potential = -1/sqrt(1+(x)^2)
+Number of orbitals:      5
+**********************************************************************
+
+Input: [CurvMethod = curv_affine]
+Input: [DerivativesStencil = stencil_star]
+Input: [SpinComponents = unpolarized]
+Input: [SmearingFunction = semiconducting]
+Input: [SymmetrizeDensity = no]
+
+******************************* States *******************************
+Total electronic charge  =        1.000
+Number of states         =        1
+States block-size        =        1
+**********************************************************************
+
+
+************************** Parallelization ***************************
+Info: Octopus will run in *serial*
+**********************************************************************
+
+Info: Generating weights for finite-difference discretization of x-gradient
+Info: Generating weights for finite-difference discretization of Laplacian
+
+******************************** Grid ********************************
+Simulation Box:
+  Type = sphere
+  Radius  [b] = 200.000
+Main mesh:
+  Spacing [b] = ( 0.350)    volume/point [b] =      0.35000
+  # inner mesh =       1143
+  # total mesh =       1151
+  Grid Cutoff [H] =    40.284100    Grid Cutoff [Ry] =    80.568199
+**********************************************************************
+
+Info: states-block size = 0.0 MiB
+Input: [StatesPack = yes]
+Input: [StatesOrthogonalization = cholesky_serial]
+
+**************************** Theory Level ****************************
+Input: [TheoryLevel = independent_particles]
+**********************************************************************
+
+
+****************************** Hartree *******************************
+Input: [DressedOrbitals = no]
+The chosen Poisson solver is 'fast Fourier transform'
+Input: [PoissonFFTKernel = spherical]
+**********************************************************************
+
+Info: FFT grid dimensions       = 2401
+      Total grid size           = 2401 (      0.0 MiB )
+Info: Poisson Cutoff Radius     = 420.2 b
+Input: [FilterPotentials = filter_TS]
+Input: [RelativisticCorrection = non_relativistic]
+
+************************ Absorbing Boundaries ************************
+Input: ABShape not specified. Using default values for absorbing boundaries.
+  Lower bound [b] =  150.000000
+  Upper bound [b] =  200.000000
+**********************************************************************
+
+Input: [DFTULevel = dft_u_none]
+Input: [MagneticConstrain = 0]
+
+****************** Approximate memory requirements *******************
+Mesh
+  global  :       0.0 MiB
+  local   :       0.0 MiB
+  total   :       0.1 MiB
+
+States
+  real    :       0.0 MiB (par_kpoints + par_states + par_domains)
+  complex :       0.0 MiB (par_kpoints + par_states + par_domains)
+
+**********************************************************************
+
+Info: Generating external potential
+      done.
+Info: Octopus initialization completed.
+Info: Starting calculation mode.
+Info: Allocating ground state wave-functions
+Info: Blocks of states
+      Block       1 contains       1 states:       1 -       1
+Info: Ground-state allocation done.
+Input: [MixField = none] (what to mix during SCF cycles)
+
+**************************** Eigensolver *****************************
+Input: [Eigensolver = cg]
+Input: [Preconditioner = pre_filter]
+Info: Generating weights for finite-difference discretization of Preconditioner
+Input: [PreconditionerFilterFactor = 0.5000]
+Input: [SubspaceDiagonalization = standard]
+**********************************************************************
+
+Input: [LCAOStart = lcao_none]
+Info: Unnormalized total charge =      1.000000
+Info: Renormalized total charge =      1.000000
+Info: Setting up Hamiltonian.
+Orthogonalizing wavefunctions.
+Info: Ground-state restart information will be written to 'restart/gs'.
+Info: SCF using real wavefunctions.
+Info: Starting SCF iteration.
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #    1 ************************
+ etot  =  8.57872407E-02 abs_ev   =  2.66E+00 rel_ev   =  3.11E+01
+ ediff =        8.58E-02 abs_dens =  3.24E-01 rel_dens =  3.24E-01
+Matrix vector products:      3
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1        0.085787    1.000000   ( 1.6E+00)
+
+Elapsed time for SCF step     1:          0.00
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #    2 ************************
+ etot  = -6.63230792E-01 abs_ev   =  7.49E-01 rel_ev   =  1.13E+00
+ ediff =        7.49E-01 abs_dens =  1.94E+00 rel_dens =  1.94E+00
+Matrix vector products:     11
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.663231    1.000000   ( 4.1E-01)
+
+Elapsed time for SCF step     2:          0.00
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #    3 ************************
+ etot  = -6.69045904E-01 abs_ev   =  5.82E-03 rel_ev   =  8.69E-03
+ ediff =        5.82E-03 abs_dens =  5.39E-03 rel_dens =  5.39E-03
+Matrix vector products:     14
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669046    1.000000   ( 1.4E-01)
+
+Elapsed time for SCF step     3:          0.00
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #    4 ************************
+ etot  = -6.69597658E-01 abs_ev   =  5.52E-04 rel_ev   =  8.24E-04
+ ediff =        5.52E-04 abs_dens =  3.07E-03 rel_dens =  3.07E-03
+Matrix vector products:     27
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669598    1.000000   ( 6.9E-02)
+
+Elapsed time for SCF step     4:          0.01
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #    5 ************************
+ etot  = -6.69677674E-01 abs_ev   =  8.00E-05 rel_ev   =  1.19E-04
+ ediff =        8.00E-05 abs_dens =  2.87E-04 rel_dens =  2.87E-04
+Matrix vector products:     27
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669678    1.000000   ( 5.2E-02)
+
+Elapsed time for SCF step     5:          0.01
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #    6 ************************
+ etot  = -6.69707492E-01 abs_ev   =  2.98E-05 rel_ev   =  4.45E-05
+ ediff =        2.98E-05 abs_dens =  1.75E-04 rel_dens =  1.75E-04
+Matrix vector products:     27
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669707    1.000000   ( 4.3E-02)
+
+Elapsed time for SCF step     6:          0.01
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #    7 ************************
+ etot  = -6.69723946E-01 abs_ev   =  1.65E-05 rel_ev   =  2.46E-05
+ ediff =        1.65E-05 abs_dens =  1.09E-04 rel_dens =  1.09E-04
+Matrix vector products:     27
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669724    1.000000   ( 3.8E-02)
+
+Elapsed time for SCF step     7:          0.01
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #    8 ************************
+ etot  = -6.69734709E-01 abs_ev   =  1.08E-05 rel_ev   =  1.61E-05
+ ediff =        1.08E-05 abs_dens =  1.63E-04 rel_dens =  1.63E-04
+Matrix vector products:     27
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669735    1.000000   ( 3.4E-02)
+
+Elapsed time for SCF step     8:          0.01
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #    9 ************************
+ etot  = -6.69742356E-01 abs_ev   =  7.65E-06 rel_ev   =  1.14E-05
+ ediff =        7.65E-06 abs_dens =  5.85E-05 rel_dens =  5.85E-05
+Matrix vector products:     27
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669742    1.000000   ( 3.1E-02)
+
+Elapsed time for SCF step     9:          0.01
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #   10 ************************
+ etot  = -6.69747916E-01 abs_ev   =  5.56E-06 rel_ev   =  8.30E-06
+ ediff =        5.56E-06 abs_dens =  1.18E-04 rel_dens =  1.18E-04
+Matrix vector products:     27
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669748    1.000000   ( 2.8E-02)
+
+Elapsed time for SCF step    10:          0.01
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #   11 ************************
+ etot  = -6.69752104E-01 abs_ev   =  4.19E-06 rel_ev   =  6.25E-06
+ ediff =        4.19E-06 abs_dens =  5.78E-05 rel_dens =  5.78E-05
+Matrix vector products:     27
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669752    1.000000   ( 2.6E-02)
+
+Elapsed time for SCF step    11:          0.01
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #   12 ************************
+ etot  = -6.69755161E-01 abs_ev   =  3.06E-06 rel_ev   =  4.56E-06
+ ediff =        3.06E-06 abs_dens =  3.76E-05 rel_dens =  3.76E-05
+Matrix vector products:     27
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669755    1.000000   ( 2.5E-02)
+
+Elapsed time for SCF step    12:          0.01
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #   13 ************************
+ etot  = -6.69757634E-01 abs_ev   =  2.47E-06 rel_ev   =  3.69E-06
+ ediff =        2.47E-06 abs_dens =  3.86E-05 rel_dens =  3.86E-05
+Matrix vector products:     27
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669758    1.000000   ( 2.3E-02)
+
+Elapsed time for SCF step    13:          0.01
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #   14 ************************
+ etot  = -6.69759599E-01 abs_ev   =  1.96E-06 rel_ev   =  2.93E-06
+ ediff =        1.96E-06 abs_dens =  3.89E-05 rel_dens =  3.89E-05
+Matrix vector products:     27
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669760    1.000000   ( 2.2E-02)
+
+Elapsed time for SCF step    14:          0.01
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #   15 ************************
+ etot  = -6.69761190E-01 abs_ev   =  1.59E-06 rel_ev   =  2.37E-06
+ ediff =        1.59E-06 abs_dens =  3.37E-05 rel_dens =  3.37E-05
+Matrix vector products:     27
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669761    1.000000   ( 2.1E-02)
+
+Elapsed time for SCF step    15:          0.01
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #   16 ************************
+ etot  = -6.69762524E-01 abs_ev   =  1.33E-06 rel_ev   =  1.99E-06
+ ediff =        1.33E-06 abs_dens =  2.63E-05 rel_dens =  2.63E-05
+Matrix vector products:     27
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669763    1.000000   ( 2.0E-02)
+
+Elapsed time for SCF step    16:          0.01
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #   17 ************************
+ etot  = -6.69763568E-01 abs_ev   =  1.04E-06 rel_ev   =  1.56E-06
+ ediff =        1.04E-06 abs_dens =  2.25E-05 rel_dens =  2.25E-05
+Matrix vector products:     27
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669764    1.000000   ( 1.9E-02)
+
+Elapsed time for SCF step    17:          0.01
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #   18 ************************
+ etot  = -6.69764620E-01 abs_ev   =  1.05E-06 rel_ev   =  1.57E-06
+ ediff =        1.05E-06 abs_dens =  6.06E-05 rel_dens =  6.06E-05
+Matrix vector products:     27
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669765    1.000000   ( 1.9E-02)
+
+Elapsed time for SCF step    18:          0.00
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #   19 ************************
+ etot  = -6.69765443E-01 abs_ev   =  8.23E-07 rel_ev   =  1.23E-06
+ ediff =        8.23E-07 abs_dens =  5.74E-05 rel_dens =  5.74E-05
+Matrix vector products:     27
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669765    1.000000   ( 1.8E-02)
+
+Elapsed time for SCF step    19:          0.01
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #   20 ************************
+ etot  = -6.69766193E-01 abs_ev   =  7.50E-07 rel_ev   =  1.12E-06
+ ediff =        7.50E-07 abs_dens =  3.96E-05 rel_dens =  3.96E-05
+Matrix vector products:     27
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669766    1.000000   ( 1.7E-02)
+
+Elapsed time for SCF step    20:          0.01
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #   21 ************************
+ etot  = -6.69766864E-01 abs_ev   =  6.71E-07 rel_ev   =  1.00E-06
+ ediff =        6.71E-07 abs_dens =  3.37E-05 rel_dens =  3.37E-05
+Matrix vector products:     27
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669767    1.000000   ( 1.7E-02)
+
+Elapsed time for SCF step    21:          0.01
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #   22 ************************
+ etot  = -6.69767365E-01 abs_ev   =  5.00E-07 rel_ev   =  7.47E-07
+ ediff =        5.00E-07 abs_dens =  5.12E-05 rel_dens =  5.12E-05
+Matrix vector products:     27
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669767    1.000000   ( 1.7E-02)
+
+Elapsed time for SCF step    22:          0.01
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #   23 ************************
+ etot  = -6.69767839E-01 abs_ev   =  4.75E-07 rel_ev   =  7.09E-07
+ ediff =        4.75E-07 abs_dens =  2.51E-05 rel_dens =  2.51E-05
+Matrix vector products:     27
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669768    1.000000   ( 1.6E-02)
+
+Elapsed time for SCF step    23:          0.01
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #   24 ************************
+ etot  = -6.69768218E-01 abs_ev   =  3.78E-07 rel_ev   =  5.65E-07
+ ediff =        3.78E-07 abs_dens =  2.75E-05 rel_dens =  2.75E-05
+Matrix vector products:     27
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669768    1.000000   ( 1.6E-02)
+
+Elapsed time for SCF step    24:          0.01
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #   25 ************************
+ etot  = -6.69768577E-01 abs_ev   =  3.59E-07 rel_ev   =  5.36E-07
+ ediff =        3.59E-07 abs_dens =  1.94E-05 rel_dens =  1.94E-05
+Matrix vector products:     27
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669769    1.000000   ( 1.6E-02)
+
+Elapsed time for SCF step    25:          0.01
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #   26 ************************
+ etot  = -6.69768892E-01 abs_ev   =  3.15E-07 rel_ev   =  4.71E-07
+ ediff =        3.15E-07 abs_dens =  2.91E-05 rel_dens =  2.91E-05
+Matrix vector products:     27
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669769    1.000000   ( 1.5E-02)
+
+Elapsed time for SCF step    26:          0.01
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #   27 ************************
+ etot  = -6.69769222E-01 abs_ev   =  3.30E-07 rel_ev   =  4.92E-07
+ ediff =        3.30E-07 abs_dens =  2.93E-05 rel_dens =  2.93E-05
+Matrix vector products:     27
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669769    1.000000   ( 1.5E-02)
+
+Elapsed time for SCF step    27:          0.01
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #   28 ************************
+ etot  = -6.69769453E-01 abs_ev   =  2.32E-07 rel_ev   =  3.46E-07
+ ediff =        2.32E-07 abs_dens =  2.53E-05 rel_dens =  2.53E-05
+Matrix vector products:     27
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669769    1.000000   ( 1.5E-02)
+
+Elapsed time for SCF step    28:          0.01
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #   29 ************************
+ etot  = -6.69769671E-01 abs_ev   =  2.18E-07 rel_ev   =  3.25E-07
+ ediff =        2.18E-07 abs_dens =  2.12E-05 rel_dens =  2.12E-05
+Matrix vector products:     27
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669770    1.000000   ( 1.5E-02)
+
+Elapsed time for SCF step    29:          0.01
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #   30 ************************
+ etot  = -6.69769876E-01 abs_ev   =  2.05E-07 rel_ev   =  3.06E-07
+ ediff =        2.05E-07 abs_dens =  2.13E-05 rel_dens =  2.13E-05
+Matrix vector products:     27
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669770    1.000000   ( 1.4E-02)
+
+Elapsed time for SCF step    30:          0.01
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #   31 ************************
+ etot  = -6.69770058E-01 abs_ev   =  1.82E-07 rel_ev   =  2.71E-07
+ ediff =        1.82E-07 abs_dens =  1.75E-05 rel_dens =  1.75E-05
+Matrix vector products:     27
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669770    1.000000   ( 1.4E-02)
+
+Elapsed time for SCF step    31:          0.01
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #   32 ************************
+ etot  = -6.69770232E-01 abs_ev   =  1.74E-07 rel_ev   =  2.60E-07
+ ediff =        1.74E-07 abs_dens =  1.81E-05 rel_dens =  1.81E-05
+Matrix vector products:     27
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669770    1.000000   ( 1.4E-02)
+
+Elapsed time for SCF step    32:          0.01
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #   33 ************************
+ etot  = -6.69770406E-01 abs_ev   =  1.75E-07 rel_ev   =  2.61E-07
+ ediff =        1.75E-07 abs_dens =  1.88E-05 rel_dens =  1.88E-05
+Matrix vector products:     27
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669770    1.000000   ( 1.4E-02)
+
+Elapsed time for SCF step    33:          0.00
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #   34 ************************
+ etot  = -6.69770564E-01 abs_ev   =  1.58E-07 rel_ev   =  2.35E-07
+ ediff =        1.58E-07 abs_dens =  1.55E-05 rel_dens =  1.55E-05
+Matrix vector products:     27
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669771    1.000000   ( 1.4E-02)
+
+Elapsed time for SCF step    34:          0.01
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #   35 ************************
+ etot  = -6.69770707E-01 abs_ev   =  1.43E-07 rel_ev   =  2.13E-07
+ ediff =        1.43E-07 abs_dens =  1.25E-05 rel_dens =  1.25E-05
+Matrix vector products:     27
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669771    1.000000   ( 1.4E-02)
+
+Elapsed time for SCF step    35:          0.01
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #   36 ************************
+ etot  = -6.69770852E-01 abs_ev   =  1.45E-07 rel_ev   =  2.17E-07
+ ediff =        1.45E-07 abs_dens =  2.15E-05 rel_dens =  2.15E-05
+Matrix vector products:     27
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669771    1.000000   ( 1.3E-02)
+
+Elapsed time for SCF step    36:          0.00
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #   37 ************************
+ etot  = -6.69771001E-01 abs_ev   =  1.49E-07 rel_ev   =  2.22E-07
+ ediff =        1.49E-07 abs_dens =  1.27E-05 rel_dens =  1.27E-05
+Matrix vector products:     27
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669771    1.000000   ( 1.3E-02)
+
+Elapsed time for SCF step    37:          0.01
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #   38 ************************
+ etot  = -6.69771151E-01 abs_ev   =  1.50E-07 rel_ev   =  2.25E-07
+ ediff =        1.50E-07 abs_dens =  3.28E-05 rel_dens =  3.28E-05
+Matrix vector products:     27
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669771    1.000000   ( 1.3E-02)
+
+Elapsed time for SCF step    38:          0.01
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #   39 ************************
+ etot  = -6.69771294E-01 abs_ev   =  1.42E-07 rel_ev   =  2.12E-07
+ ediff =        1.42E-07 abs_dens =  2.17E-05 rel_dens =  2.17E-05
+Matrix vector products:     27
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669771    1.000000   ( 1.3E-02)
+
+Elapsed time for SCF step    39:          0.01
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #   40 ************************
+ etot  = -6.69771442E-01 abs_ev   =  1.48E-07 rel_ev   =  2.21E-07
+ ediff =        1.48E-07 abs_dens =  2.09E-05 rel_dens =  2.09E-05
+Matrix vector products:     27
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669771    1.000000   ( 1.3E-02)
+
+Elapsed time for SCF step    40:          0.01
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #   41 ************************
+ etot  = -6.69771582E-01 abs_ev   =  1.40E-07 rel_ev   =  2.09E-07
+ ediff =        1.40E-07 abs_dens =  1.97E-05 rel_dens =  1.97E-05
+Matrix vector products:     27
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669772    1.000000   ( 1.3E-02)
+
+Elapsed time for SCF step    41:          0.01
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #   42 ************************
+ etot  = -6.69771707E-01 abs_ev   =  1.25E-07 rel_ev   =  1.87E-07
+ ediff =        1.25E-07 abs_dens =  1.13E-05 rel_dens =  1.13E-05
+Matrix vector products:     27
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669772    1.000000   ( 1.3E-02)
+
+Elapsed time for SCF step    42:          0.01
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #   43 ************************
+ etot  = -6.69771838E-01 abs_ev   =  1.32E-07 rel_ev   =  1.97E-07
+ ediff =        1.32E-07 abs_dens =  1.51E-05 rel_dens =  1.51E-05
+Matrix vector products:     27
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669772    1.000000   ( 1.2E-02)
+
+Elapsed time for SCF step    43:          0.01
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #   44 ************************
+ etot  = -6.69771964E-01 abs_ev   =  1.26E-07 rel_ev   =  1.88E-07
+ ediff =        1.26E-07 abs_dens =  1.96E-05 rel_dens =  1.96E-05
+Matrix vector products:     27
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669772    1.000000   ( 1.2E-02)
+
+Elapsed time for SCF step    44:          0.00
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #   45 ************************
+ etot  = -6.69772081E-01 abs_ev   =  1.17E-07 rel_ev   =  1.74E-07
+ ediff =        1.17E-07 abs_dens =  1.62E-05 rel_dens =  1.62E-05
+Matrix vector products:     27
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669772    1.000000   ( 1.2E-02)
+
+Elapsed time for SCF step    45:          0.01
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #   46 ************************
+ etot  = -6.69772184E-01 abs_ev   =  1.03E-07 rel_ev   =  1.54E-07
+ ediff =        1.03E-07 abs_dens =  1.32E-05 rel_dens =  1.32E-05
+Matrix vector products:     27
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669772    1.000000   ( 1.2E-02)
+
+Elapsed time for SCF step    46:          0.01
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #   47 ************************
+ etot  = -6.69772295E-01 abs_ev   =  1.11E-07 rel_ev   =  1.66E-07
+ ediff =        1.11E-07 abs_dens =  1.28E-05 rel_dens =  1.28E-05
+Matrix vector products:     27
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669772    1.000000   ( 1.2E-02)
+
+Elapsed time for SCF step    47:          0.01
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #   48 ************************
+ etot  = -6.69772400E-01 abs_ev   =  1.05E-07 rel_ev   =  1.57E-07
+ ediff =        1.05E-07 abs_dens =  1.08E-05 rel_dens =  1.08E-05
+Matrix vector products:     27
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669772    1.000000   ( 1.2E-02)
+
+Elapsed time for SCF step    48:          0.01
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #   49 ************************
+ etot  = -6.69772500E-01 abs_ev   =  9.94E-08 rel_ev   =  1.48E-07
+ ediff =        9.94E-08 abs_dens =  1.15E-05 rel_dens =  1.15E-05
+Matrix vector products:     27
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669772    1.000000   ( 1.2E-02)
+
+Elapsed time for SCF step    49:          0.01
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #   50 ************************
+ etot  = -6.69772609E-01 abs_ev   =  1.09E-07 rel_ev   =  1.63E-07
+ ediff =        1.09E-07 abs_dens =  1.33E-05 rel_dens =  1.33E-05
+Matrix vector products:     27
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669773    1.000000   ( 1.1E-02)
+
+Elapsed time for SCF step    50:          0.01
+**********************************************************************
+
+
+             Info: Writing states. 2025/03/25 at 20:43:20
+
+
+        Info: Finished writing states. 2025/03/25 at 20:43:20
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #   51 ************************
+ etot  = -6.69772719E-01 abs_ev   =  1.11E-07 rel_ev   =  1.66E-07
+ ediff =        1.11E-07 abs_dens =  1.60E-05 rel_dens =  1.60E-05
+Matrix vector products:     27
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669773    1.000000   ( 1.1E-02)
+
+Elapsed time for SCF step    51:          0.04
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #   52 ************************
+ etot  = -6.69772876E-01 abs_ev   =  1.56E-07 rel_ev   =  2.33E-07
+ ediff =        1.56E-07 abs_dens =  1.27E-05 rel_dens =  1.27E-05
+Matrix vector products:     27
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669773    1.000000   ( 1.1E-02)
+
+Elapsed time for SCF step    52:          0.01
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #   53 ************************
+ etot  = -6.69773019E-01 abs_ev   =  1.43E-07 rel_ev   =  2.14E-07
+ ediff =        1.43E-07 abs_dens =  1.57E-05 rel_dens =  1.57E-05
+Matrix vector products:     27
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669773    1.000000   ( 1.1E-02)
+
+Elapsed time for SCF step    53:          0.01
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #   54 ************************
+ etot  = -6.69773152E-01 abs_ev   =  1.33E-07 rel_ev   =  1.99E-07
+ ediff =        1.33E-07 abs_dens =  9.68E-06 rel_dens =  9.68E-06
+Matrix vector products:     27
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669773    1.000000   ( 1.1E-02)
+
+Elapsed time for SCF step    54:          0.01
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #   55 ************************
+ etot  = -6.69773286E-01 abs_ev   =  1.35E-07 rel_ev   =  2.01E-07
+ ediff =        1.35E-07 abs_dens =  1.26E-05 rel_dens =  1.26E-05
+Matrix vector products:     27
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669773    1.000000   ( 1.1E-02)
+
+Elapsed time for SCF step    55:          0.00
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #   56 ************************
+ etot  = -6.69773433E-01 abs_ev   =  1.46E-07 rel_ev   =  2.18E-07
+ ediff =        1.46E-07 abs_dens =  4.03E-05 rel_dens =  4.03E-05
+Matrix vector products:     27
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669773    1.000000   ( 1.0E-02)
+
+Elapsed time for SCF step    56:          0.01
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #   57 ************************
+ etot  = -6.69773547E-01 abs_ev   =  1.14E-07 rel_ev   =  1.70E-07
+ ediff =        1.14E-07 abs_dens =  2.79E-05 rel_dens =  2.79E-05
+Matrix vector products:     14
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669774    1.000000   ( 1.0E-02)
+
+Elapsed time for SCF step    57:          0.01
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #   58 ************************
+ etot  = -6.69773675E-01 abs_ev   =  1.28E-07 rel_ev   =  1.90E-07
+ ediff =        1.28E-07 abs_dens =  4.01E-05 rel_dens =  4.01E-05
+Matrix vector products:     27
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669774    1.000000   ( 1.0E-02)
+
+Elapsed time for SCF step    58:          0.01
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #   59 ************************
+ etot  = -6.69773784E-01 abs_ev   =  1.09E-07 rel_ev   =  1.63E-07
+ ediff =        1.09E-07 abs_dens =  2.77E-05 rel_dens =  2.77E-05
+Matrix vector products:     27
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669774    1.000000   ( 1.0E-02)
+
+Elapsed time for SCF step    59:          0.01
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #   60 ************************
+ etot  = -6.69773882E-01 abs_ev   =  9.79E-08 rel_ev   =  1.46E-07
+ ediff =        9.79E-08 abs_dens =  1.05E-05 rel_dens =  1.05E-05
+Matrix vector products:     27
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669774    1.000000   ( 9.9E-03)
+
+Elapsed time for SCF step    60:          0.01
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #   61 ************************
+ etot  = -6.69773974E-01 abs_ev   =  9.23E-08 rel_ev   =  1.38E-07
+ ediff =        9.23E-08 abs_dens =  2.09E-05 rel_dens =  2.09E-05
+Matrix vector products:     27
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669774    1.000000   ( 9.7E-03)
+
+Elapsed time for SCF step    61:          0.04
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #   62 ************************
+ etot  = -6.69774065E-01 abs_ev   =  9.11E-08 rel_ev   =  1.36E-07
+ ediff =        9.11E-08 abs_dens =  1.19E-05 rel_dens =  1.19E-05
+Matrix vector products:     27
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669774    1.000000   ( 9.6E-03)
+
+Elapsed time for SCF step    62:          0.02
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #   63 ************************
+ etot  = -6.69774162E-01 abs_ev   =  9.71E-08 rel_ev   =  1.45E-07
+ ediff =        9.71E-08 abs_dens =  4.72E-05 rel_dens =  4.72E-05
+Matrix vector products:     27
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669774    1.000000   ( 9.5E-03)
+
+Elapsed time for SCF step    63:          0.01
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #   64 ************************
+ etot  = -6.69774270E-01 abs_ev   =  1.08E-07 rel_ev   =  1.61E-07
+ ediff =        1.08E-07 abs_dens =  2.44E-05 rel_dens =  2.44E-05
+Matrix vector products:     27
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669774    1.000000   ( 9.3E-03)
+
+Elapsed time for SCF step    64:          0.01
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #   65 ************************
+ etot  = -6.69774381E-01 abs_ev   =  1.11E-07 rel_ev   =  1.66E-07
+ ediff =        1.11E-07 abs_dens =  1.61E-05 rel_dens =  1.61E-05
+Matrix vector products:     27
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669774    1.000000   ( 9.2E-03)
+
+Elapsed time for SCF step    65:          0.01
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #   66 ************************
+ etot  = -6.69774460E-01 abs_ev   =  7.86E-08 rel_ev   =  1.17E-07
+ ediff =        7.86E-08 abs_dens =  1.80E-05 rel_dens =  1.80E-05
+Matrix vector products:     27
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669774    1.000000   ( 9.0E-03)
+
+Elapsed time for SCF step    66:          0.01
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #   67 ************************
+ etot  = -6.69774549E-01 abs_ev   =  8.87E-08 rel_ev   =  1.32E-07
+ ediff =        8.87E-08 abs_dens =  1.66E-05 rel_dens =  1.66E-05
+Matrix vector products:     27
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669775    1.000000   ( 8.9E-03)
+
+Elapsed time for SCF step    67:          0.01
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #   68 ************************
+ etot  = -6.69774623E-01 abs_ev   =  7.42E-08 rel_ev   =  1.11E-07
+ ediff =        7.42E-08 abs_dens =  1.92E-05 rel_dens =  1.92E-05
+Matrix vector products:     27
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669775    1.000000   ( 8.8E-03)
+
+Elapsed time for SCF step    68:          0.01
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #   69 ************************
+ etot  = -6.69774697E-01 abs_ev   =  7.42E-08 rel_ev   =  1.11E-07
+ ediff =        7.42E-08 abs_dens =  1.84E-05 rel_dens =  1.84E-05
+Matrix vector products:     24
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669775    1.000000   ( 8.7E-03)
+
+Elapsed time for SCF step    69:          0.01
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #   70 ************************
+ etot  = -6.69774764E-01 abs_ev   =  6.65E-08 rel_ev   =  9.94E-08
+ ediff =        6.65E-08 abs_dens =  1.85E-05 rel_dens =  1.85E-05
+Matrix vector products:     27
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669775    1.000000   ( 8.6E-03)
+
+Elapsed time for SCF step    70:          0.01
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #   71 ************************
+ etot  = -6.69774801E-01 abs_ev   =  3.73E-08 rel_ev   =  5.58E-08
+ ediff =        3.73E-08 abs_dens =  2.36E-05 rel_dens =  2.36E-05
+Matrix vector products:      8
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669775    1.000000   ( 8.5E-03)
+
+Elapsed time for SCF step    71:          0.01
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #   72 ************************
+ etot  = -6.69774918E-01 abs_ev   =  1.17E-07 rel_ev   =  1.74E-07
+ ediff =        1.17E-07 abs_dens =  4.86E-05 rel_dens =  4.86E-05
+Matrix vector products:     27
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669775    1.000000   ( 8.3E-03)
+
+Elapsed time for SCF step    72:          0.01
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #   73 ************************
+ etot  = -6.69775037E-01 abs_ev   =  1.19E-07 rel_ev   =  1.78E-07
+ ediff =        1.19E-07 abs_dens =  5.60E-05 rel_dens =  5.60E-05
+Matrix vector products:      9
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669775    1.000000   ( 8.1E-03)
+
+Elapsed time for SCF step    73:          0.01
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #   74 ************************
+ etot  = -6.69775116E-01 abs_ev   =  7.90E-08 rel_ev   =  1.18E-07
+ ediff =        7.90E-08 abs_dens =  1.98E-05 rel_dens =  1.98E-05
+Matrix vector products:     27
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669775    1.000000   ( 8.0E-03)
+
+Elapsed time for SCF step    74:          0.01
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #   75 ************************
+ etot  = -6.69775184E-01 abs_ev   =  6.85E-08 rel_ev   =  1.02E-07
+ ediff =        6.85E-08 abs_dens =  1.94E-05 rel_dens =  1.94E-05
+Matrix vector products:     25
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669775    1.000000   ( 7.9E-03)
+
+Elapsed time for SCF step    75:          0.01
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #   76 ************************
+ etot  = -6.69775233E-01 abs_ev   =  4.90E-08 rel_ev   =  7.32E-08
+ ediff =        4.90E-08 abs_dens =  1.47E-05 rel_dens =  1.47E-05
+Matrix vector products:     27
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669775    1.000000   ( 7.8E-03)
+
+Elapsed time for SCF step    76:          0.01
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #   77 ************************
+ etot  = -6.69775290E-01 abs_ev   =  5.65E-08 rel_ev   =  8.43E-08
+ ediff =        5.65E-08 abs_dens =  3.58E-05 rel_dens =  3.58E-05
+Matrix vector products:     27
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669775    1.000000   ( 7.7E-03)
+
+Elapsed time for SCF step    77:          0.01
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #   78 ************************
+ etot  = -6.69775346E-01 abs_ev   =  5.64E-08 rel_ev   =  8.43E-08
+ ediff =        5.64E-08 abs_dens =  1.95E-05 rel_dens =  1.95E-05
+Matrix vector products:     27
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669775    1.000000   ( 7.6E-03)
+
+Elapsed time for SCF step    78:          0.01
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #   79 ************************
+ etot  = -6.69775399E-01 abs_ev   =  5.31E-08 rel_ev   =  7.93E-08
+ ediff =        5.31E-08 abs_dens =  1.17E-05 rel_dens =  1.17E-05
+Matrix vector products:     27
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669775    1.000000   ( 7.5E-03)
+
+Elapsed time for SCF step    79:          0.01
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #   80 ************************
+ etot  = -6.69775439E-01 abs_ev   =  3.95E-08 rel_ev   =  5.89E-08
+ ediff =        3.95E-08 abs_dens =  8.59E-06 rel_dens =  8.59E-06
+Matrix vector products:     27
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669775    1.000000   ( 7.4E-03)
+
+Elapsed time for SCF step    80:          0.01
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #   81 ************************
+ etot  = -6.69775481E-01 abs_ev   =  4.19E-08 rel_ev   =  6.25E-08
+ ediff =        4.19E-08 abs_dens =  9.28E-06 rel_dens =  9.28E-06
+Matrix vector products:     27
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669775    1.000000   ( 7.3E-03)
+
+Elapsed time for SCF step    81:          0.01
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #   82 ************************
+ etot  = -6.69775518E-01 abs_ev   =  3.72E-08 rel_ev   =  5.56E-08
+ ediff =        3.72E-08 abs_dens =  8.03E-06 rel_dens =  8.03E-06
+Matrix vector products:     27
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669776    1.000000   ( 7.3E-03)
+
+Elapsed time for SCF step    82:          0.06
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #   83 ************************
+ etot  = -6.69775557E-01 abs_ev   =  3.87E-08 rel_ev   =  5.77E-08
+ ediff =        3.87E-08 abs_dens =  8.33E-06 rel_dens =  8.33E-06
+Matrix vector products:     27
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669776    1.000000   ( 7.2E-03)
+
+Elapsed time for SCF step    83:          0.05
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #   84 ************************
+ etot  = -6.69775592E-01 abs_ev   =  3.52E-08 rel_ev   =  5.26E-08
+ ediff =        3.52E-08 abs_dens =  9.27E-06 rel_dens =  9.27E-06
+Matrix vector products:     27
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669776    1.000000   ( 7.1E-03)
+
+Elapsed time for SCF step    84:          0.02
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #   85 ************************
+ etot  = -6.69775628E-01 abs_ev   =  3.59E-08 rel_ev   =  5.36E-08
+ ediff =        3.59E-08 abs_dens =  9.98E-06 rel_dens =  9.98E-06
+Matrix vector products:     27
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669776    1.000000   ( 7.1E-03)
+
+Elapsed time for SCF step    85:          0.01
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #   86 ************************
+ etot  = -6.69775669E-01 abs_ev   =  4.12E-08 rel_ev   =  6.15E-08
+ ediff =        4.12E-08 abs_dens =  9.34E-06 rel_dens =  9.34E-06
+Matrix vector products:     27
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669776    1.000000   ( 7.0E-03)
+
+Elapsed time for SCF step    86:          0.01
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #   87 ************************
+ etot  = -6.69775711E-01 abs_ev   =  4.16E-08 rel_ev   =  6.21E-08
+ ediff =        4.16E-08 abs_dens =  1.65E-05 rel_dens =  1.65E-05
+Matrix vector products:     27
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669776    1.000000   ( 6.9E-03)
+
+Elapsed time for SCF step    87:          0.01
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #   88 ************************
+ etot  = -6.69775746E-01 abs_ev   =  3.57E-08 rel_ev   =  5.33E-08
+ ediff =        3.57E-08 abs_dens =  1.09E-05 rel_dens =  1.09E-05
+Matrix vector products:     27
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669776    1.000000   ( 6.8E-03)
+
+Elapsed time for SCF step    88:          0.01
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #   89 ************************
+ etot  = -6.69775782E-01 abs_ev   =  3.62E-08 rel_ev   =  5.40E-08
+ ediff =        3.62E-08 abs_dens =  9.21E-06 rel_dens =  9.21E-06
+Matrix vector products:     27
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669776    1.000000   ( 6.8E-03)
+
+Elapsed time for SCF step    89:          0.01
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #   90 ************************
+ etot  = -6.69775815E-01 abs_ev   =  3.29E-08 rel_ev   =  4.91E-08
+ ediff =        3.29E-08 abs_dens =  8.75E-06 rel_dens =  8.75E-06
+Matrix vector products:     27
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669776    1.000000   ( 6.7E-03)
+
+Elapsed time for SCF step    90:          0.01
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #   91 ************************
+ etot  = -6.69775849E-01 abs_ev   =  3.32E-08 rel_ev   =  4.96E-08
+ ediff =        3.32E-08 abs_dens =  1.54E-05 rel_dens =  1.54E-05
+Matrix vector products:     27
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669776    1.000000   ( 6.6E-03)
+
+Elapsed time for SCF step    91:          0.02
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #   92 ************************
+ etot  = -6.69775882E-01 abs_ev   =  3.30E-08 rel_ev   =  4.93E-08
+ ediff =        3.30E-08 abs_dens =  1.31E-05 rel_dens =  1.31E-05
+Matrix vector products:     27
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669776    1.000000   ( 6.6E-03)
+
+Elapsed time for SCF step    92:          0.03
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #   93 ************************
+ etot  = -6.69775914E-01 abs_ev   =  3.20E-08 rel_ev   =  4.77E-08
+ ediff =        3.20E-08 abs_dens =  1.04E-05 rel_dens =  1.04E-05
+Matrix vector products:     27
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669776    1.000000   ( 6.5E-03)
+
+Elapsed time for SCF step    93:          0.04
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #   94 ************************
+ etot  = -6.69775940E-01 abs_ev   =  2.65E-08 rel_ev   =  3.95E-08
+ ediff =        2.65E-08 abs_dens =  4.91E-06 rel_dens =  4.91E-06
+Matrix vector products:     27
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669776    1.000000   ( 6.4E-03)
+
+Elapsed time for SCF step    94:          0.03
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #   95 ************************
+ etot  = -6.69775972E-01 abs_ev   =  3.15E-08 rel_ev   =  4.70E-08
+ ediff =        3.15E-08 abs_dens =  2.41E-05 rel_dens =  2.41E-05
+Matrix vector products:     27
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669776    1.000000   ( 6.4E-03)
+
+Elapsed time for SCF step    95:          0.02
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #   96 ************************
+ etot  = -6.69776002E-01 abs_ev   =  3.04E-08 rel_ev   =  4.54E-08
+ ediff =        3.04E-08 abs_dens =  1.32E-05 rel_dens =  1.32E-05
+Matrix vector products:     27
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669776    1.000000   ( 6.3E-03)
+
+Elapsed time for SCF step    96:          0.01
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #   97 ************************
+ etot  = -6.69776032E-01 abs_ev   =  2.99E-08 rel_ev   =  4.46E-08
+ ediff =        2.99E-08 abs_dens =  6.85E-06 rel_dens =  6.85E-06
+Matrix vector products:     27
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669776    1.000000   ( 6.2E-03)
+
+Elapsed time for SCF step    97:          0.01
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #   98 ************************
+ etot  = -6.69776058E-01 abs_ev   =  2.67E-08 rel_ev   =  3.99E-08
+ ediff =        2.67E-08 abs_dens =  6.09E-06 rel_dens =  6.09E-06
+Matrix vector products:     27
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669776    1.000000   ( 6.2E-03)
+
+Elapsed time for SCF step    98:          0.01
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #   99 ************************
+ etot  = -6.69776086E-01 abs_ev   =  2.78E-08 rel_ev   =  4.15E-08
+ ediff =        2.78E-08 abs_dens =  9.55E-06 rel_dens =  9.55E-06
+Matrix vector products:     27
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669776    1.000000   ( 6.1E-03)
+
+Elapsed time for SCF step    99:          0.01
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #  100 ************************
+ etot  = -6.69776112E-01 abs_ev   =  2.55E-08 rel_ev   =  3.81E-08
+ ediff =        2.55E-08 abs_dens =  6.09E-06 rel_dens =  6.09E-06
+Matrix vector products:     27
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669776    1.000000   ( 6.1E-03)
+
+Elapsed time for SCF step   100:          0.02
+**********************************************************************
+
+
+             Info: Writing states. 2025/03/25 at 20:43:20
+
+
+        Info: Finished writing states. 2025/03/25 at 20:43:20
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #  101 ************************
+ etot  = -6.69776137E-01 abs_ev   =  2.55E-08 rel_ev   =  3.81E-08
+ ediff =        2.55E-08 abs_dens =  8.92E-06 rel_dens =  8.92E-06
+Matrix vector products:     27
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669776    1.000000   ( 6.0E-03)
+
+Elapsed time for SCF step   101:          0.08
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #  102 ************************
+ etot  = -6.69776162E-01 abs_ev   =  2.42E-08 rel_ev   =  3.61E-08
+ ediff =        2.42E-08 abs_dens =  7.66E-06 rel_dens =  7.66E-06
+Matrix vector products:     27
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669776    1.000000   ( 5.9E-03)
+
+Elapsed time for SCF step   102:          0.01
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #  103 ************************
+ etot  = -6.69776186E-01 abs_ev   =  2.43E-08 rel_ev   =  3.63E-08
+ ediff =        2.43E-08 abs_dens =  7.92E-06 rel_dens =  7.92E-06
+Matrix vector products:     27
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669776    1.000000   ( 5.9E-03)
+
+Elapsed time for SCF step   103:          0.01
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #  104 ************************
+ etot  = -6.69776209E-01 abs_ev   =  2.32E-08 rel_ev   =  3.46E-08
+ ediff =        2.32E-08 abs_dens =  9.16E-06 rel_dens =  9.16E-06
+Matrix vector products:     27
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669776    1.000000   ( 5.8E-03)
+
+Elapsed time for SCF step   104:          0.01
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #  105 ************************
+ etot  = -6.69776234E-01 abs_ev   =  2.46E-08 rel_ev   =  3.67E-08
+ ediff =        2.46E-08 abs_dens =  1.51E-05 rel_dens =  1.51E-05
+Matrix vector products:     27
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669776    1.000000   ( 5.8E-03)
+
+Elapsed time for SCF step   105:          0.01
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #  106 ************************
+ etot  = -6.69776258E-01 abs_ev   =  2.48E-08 rel_ev   =  3.70E-08
+ ediff =        2.48E-08 abs_dens =  1.10E-05 rel_dens =  1.10E-05
+Matrix vector products:     27
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669776    1.000000   ( 5.7E-03)
+
+Elapsed time for SCF step   106:          0.01
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #  107 ************************
+ etot  = -6.69776282E-01 abs_ev   =  2.39E-08 rel_ev   =  3.56E-08
+ ediff =        2.39E-08 abs_dens =  8.51E-06 rel_dens =  8.51E-06
+Matrix vector products:     27
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669776    1.000000   ( 5.7E-03)
+
+Elapsed time for SCF step   107:          0.01
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #  108 ************************
+ etot  = -6.69776307E-01 abs_ev   =  2.46E-08 rel_ev   =  3.68E-08
+ ediff =        2.46E-08 abs_dens =  6.34E-06 rel_dens =  6.34E-06
+Matrix vector products:     27
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669776    1.000000   ( 5.6E-03)
+
+Elapsed time for SCF step   108:          0.01
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #  109 ************************
+ etot  = -6.69776330E-01 abs_ev   =  2.31E-08 rel_ev   =  3.44E-08
+ ediff =        2.31E-08 abs_dens =  1.18E-05 rel_dens =  1.18E-05
+Matrix vector products:     27
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669776    1.000000   ( 5.6E-03)
+
+Elapsed time for SCF step   109:          0.01
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #  110 ************************
+ etot  = -6.69776350E-01 abs_ev   =  1.99E-08 rel_ev   =  2.96E-08
+ ediff =        1.99E-08 abs_dens =  8.33E-06 rel_dens =  8.33E-06
+Matrix vector products:     27
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669776    1.000000   ( 5.5E-03)
+
+Elapsed time for SCF step   110:          0.02
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #  111 ************************
+ etot  = -6.69776371E-01 abs_ev   =  2.14E-08 rel_ev   =  3.20E-08
+ ediff =        2.14E-08 abs_dens =  8.99E-06 rel_dens =  8.99E-06
+Matrix vector products:     27
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669776    1.000000   ( 5.5E-03)
+
+Elapsed time for SCF step   111:          0.01
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #  112 ************************
+ etot  = -6.69776392E-01 abs_ev   =  2.05E-08 rel_ev   =  3.05E-08
+ ediff =        2.05E-08 abs_dens =  5.30E-06 rel_dens =  5.30E-06
+Matrix vector products:     27
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669776    1.000000   ( 5.4E-03)
+
+Elapsed time for SCF step   112:          0.01
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #  113 ************************
+ etot  = -6.69776413E-01 abs_ev   =  2.12E-08 rel_ev   =  3.16E-08
+ ediff =        2.12E-08 abs_dens =  7.22E-06 rel_dens =  7.22E-06
+Matrix vector products:     27
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669776    1.000000   ( 5.3E-03)
+
+Elapsed time for SCF step   113:          0.01
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #  114 ************************
+ etot  = -6.69776432E-01 abs_ev   =  1.88E-08 rel_ev   =  2.81E-08
+ ediff =        1.88E-08 abs_dens =  5.92E-06 rel_dens =  5.92E-06
+Matrix vector products:     27
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669776    1.000000   ( 5.3E-03)
+
+Elapsed time for SCF step   114:          0.03
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #  115 ************************
+ etot  = -6.69776450E-01 abs_ev   =  1.90E-08 rel_ev   =  2.83E-08
+ ediff =        1.90E-08 abs_dens =  5.49E-06 rel_dens =  5.49E-06
+Matrix vector products:     27
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669776    1.000000   ( 5.3E-03)
+
+Elapsed time for SCF step   115:          0.05
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #  116 ************************
+ etot  = -6.69776469E-01 abs_ev   =  1.81E-08 rel_ev   =  2.70E-08
+ ediff =        1.81E-08 abs_dens =  4.17E-06 rel_dens =  4.17E-06
+Matrix vector products:     27
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669776    1.000000   ( 5.2E-03)
+
+Elapsed time for SCF step   116:          0.03
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #  117 ************************
+ etot  = -6.69776488E-01 abs_ev   =  1.99E-08 rel_ev   =  2.98E-08
+ ediff =        1.99E-08 abs_dens =  5.26E-06 rel_dens =  5.26E-06
+Matrix vector products:     27
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669776    1.000000   ( 5.2E-03)
+
+Elapsed time for SCF step   117:          0.01
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #  118 ************************
+ etot  = -6.69776506E-01 abs_ev   =  1.71E-08 rel_ev   =  2.56E-08
+ ediff =        1.71E-08 abs_dens =  4.40E-06 rel_dens =  4.40E-06
+Matrix vector products:     27
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669777    1.000000   ( 5.1E-03)
+
+Elapsed time for SCF step   118:          0.01
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #  119 ************************
+ etot  = -6.69776524E-01 abs_ev   =  1.79E-08 rel_ev   =  2.67E-08
+ ediff =        1.79E-08 abs_dens =  5.79E-06 rel_dens =  5.79E-06
+Matrix vector products:     27
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669777    1.000000   ( 5.1E-03)
+
+Elapsed time for SCF step   119:          0.01
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #  120 ************************
+ etot  = -6.69776539E-01 abs_ev   =  1.59E-08 rel_ev   =  2.38E-08
+ ediff =        1.59E-08 abs_dens =  5.49E-06 rel_dens =  5.49E-06
+Matrix vector products:     27
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669777    1.000000   ( 5.0E-03)
+
+Elapsed time for SCF step   120:          0.01
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #  121 ************************
+ etot  = -6.69776557E-01 abs_ev   =  1.74E-08 rel_ev   =  2.60E-08
+ ediff =        1.74E-08 abs_dens =  5.89E-06 rel_dens =  5.89E-06
+Matrix vector products:     27
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669777    1.000000   ( 5.0E-03)
+
+Elapsed time for SCF step   121:          0.01
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #  122 ************************
+ etot  = -6.69776573E-01 abs_ev   =  1.63E-08 rel_ev   =  2.44E-08
+ ediff =        1.63E-08 abs_dens =  5.31E-06 rel_dens =  5.31E-06
+Matrix vector products:     27
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669777    1.000000   ( 4.9E-03)
+
+Elapsed time for SCF step   122:          0.01
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #  123 ************************
+ etot  = -6.69776592E-01 abs_ev   =  1.86E-08 rel_ev   =  2.77E-08
+ ediff =        1.86E-08 abs_dens =  6.44E-06 rel_dens =  6.44E-06
+Matrix vector products:     27
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669777    1.000000   ( 4.9E-03)
+
+Elapsed time for SCF step   123:          0.01
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #  124 ************************
+ etot  = -6.69776607E-01 abs_ev   =  1.56E-08 rel_ev   =  2.33E-08
+ ediff =        1.56E-08 abs_dens =  4.72E-06 rel_dens =  4.72E-06
+Matrix vector products:     27
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669777    1.000000   ( 4.8E-03)
+
+Elapsed time for SCF step   124:          0.02
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #  125 ************************
+ etot  = -6.69776624E-01 abs_ev   =  1.62E-08 rel_ev   =  2.42E-08
+ ediff =        1.62E-08 abs_dens =  4.42E-06 rel_dens =  4.42E-06
+Matrix vector products:     27
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669777    1.000000   ( 4.8E-03)
+
+Elapsed time for SCF step   125:          0.01
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #  126 ************************
+ etot  = -6.69776639E-01 abs_ev   =  1.51E-08 rel_ev   =  2.25E-08
+ ediff =        1.51E-08 abs_dens =  3.66E-06 rel_dens =  3.66E-06
+Matrix vector products:     27
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669777    1.000000   ( 4.7E-03)
+
+Elapsed time for SCF step   126:          0.02
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #  127 ************************
+ etot  = -6.69776655E-01 abs_ev   =  1.65E-08 rel_ev   =  2.46E-08
+ ediff =        1.65E-08 abs_dens =  4.23E-06 rel_dens =  4.23E-06
+Matrix vector products:     27
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669777    1.000000   ( 4.7E-03)
+
+Elapsed time for SCF step   127:          0.02
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #  128 ************************
+ etot  = -6.69776670E-01 abs_ev   =  1.54E-08 rel_ev   =  2.29E-08
+ ediff =        1.54E-08 abs_dens =  3.22E-06 rel_dens =  3.22E-06
+Matrix vector products:     27
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669777    1.000000   ( 4.6E-03)
+
+Elapsed time for SCF step   128:          0.02
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #  129 ************************
+ etot  = -6.69776688E-01 abs_ev   =  1.75E-08 rel_ev   =  2.61E-08
+ ediff =        1.75E-08 abs_dens =  3.89E-06 rel_dens =  3.89E-06
+Matrix vector products:     27
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669777    1.000000   ( 4.6E-03)
+
+Elapsed time for SCF step   129:          0.04
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #  130 ************************
+ etot  = -6.69776704E-01 abs_ev   =  1.64E-08 rel_ev   =  2.45E-08
+ ediff =        1.64E-08 abs_dens =  6.33E-06 rel_dens =  6.33E-06
+Matrix vector products:     27
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669777    1.000000   ( 4.5E-03)
+
+Elapsed time for SCF step   130:          0.01
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #  131 ************************
+ etot  = -6.69776723E-01 abs_ev   =  1.84E-08 rel_ev   =  2.74E-08
+ ediff =        1.84E-08 abs_dens =  6.33E-06 rel_dens =  6.33E-06
+Matrix vector products:     27
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669777    1.000000   ( 4.5E-03)
+
+Elapsed time for SCF step   131:          0.01
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #  132 ************************
+ etot  = -6.69776743E-01 abs_ev   =  1.99E-08 rel_ev   =  2.97E-08
+ ediff =        1.99E-08 abs_dens =  1.54E-05 rel_dens =  1.54E-05
+Matrix vector products:     27
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669777    1.000000   ( 4.4E-03)
+
+Elapsed time for SCF step   132:          0.01
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #  133 ************************
+ etot  = -6.69776757E-01 abs_ev   =  1.46E-08 rel_ev   =  2.18E-08
+ ediff =        1.46E-08 abs_dens =  1.94E-05 rel_dens =  1.94E-05
+Matrix vector products:     10
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669777    1.000000   ( 4.4E-03)
+
+Elapsed time for SCF step   133:          0.01
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #  134 ************************
+ etot  = -6.69776770E-01 abs_ev   =  1.32E-08 rel_ev   =  1.97E-08
+ ediff =        1.32E-08 abs_dens =  7.16E-06 rel_dens =  7.16E-06
+Matrix vector products:     27
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669777    1.000000   ( 4.3E-03)
+
+Elapsed time for SCF step   134:          0.01
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #  135 ************************
+ etot  = -6.69776783E-01 abs_ev   =  1.27E-08 rel_ev   =  1.90E-08
+ ediff =        1.27E-08 abs_dens =  6.11E-06 rel_dens =  6.11E-06
+Matrix vector products:     27
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669777    1.000000   ( 4.3E-03)
+
+Elapsed time for SCF step   135:          0.01
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #  136 ************************
+ etot  = -6.69776794E-01 abs_ev   =  1.11E-08 rel_ev   =  1.66E-08
+ ediff =        1.11E-08 abs_dens =  6.88E-06 rel_dens =  6.88E-06
+Matrix vector products:     27
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669777    1.000000   ( 4.3E-03)
+
+Elapsed time for SCF step   136:          0.01
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #  137 ************************
+ etot  = -6.69776807E-01 abs_ev   =  1.23E-08 rel_ev   =  1.84E-08
+ ediff =        1.23E-08 abs_dens =  4.17E-06 rel_dens =  4.17E-06
+Matrix vector products:     27
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669777    1.000000   ( 4.2E-03)
+
+Elapsed time for SCF step   137:          0.01
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #  138 ************************
+ etot  = -6.69776820E-01 abs_ev   =  1.37E-08 rel_ev   =  2.04E-08
+ ediff =        1.37E-08 abs_dens =  4.33E-06 rel_dens =  4.33E-06
+Matrix vector products:     27
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669777    1.000000   ( 4.2E-03)
+
+Elapsed time for SCF step   138:          0.01
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #  139 ************************
+ etot  = -6.69776836E-01 abs_ev   =  1.53E-08 rel_ev   =  2.28E-08
+ ediff =        1.53E-08 abs_dens =  4.16E-06 rel_dens =  4.16E-06
+Matrix vector products:     27
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669777    1.000000   ( 4.1E-03)
+
+Elapsed time for SCF step   139:          0.01
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #  140 ************************
+ etot  = -6.69776848E-01 abs_ev   =  1.26E-08 rel_ev   =  1.88E-08
+ ediff =        1.26E-08 abs_dens =  6.96E-06 rel_dens =  6.96E-06
+Matrix vector products:     27
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669777    1.000000   ( 4.1E-03)
+
+Elapsed time for SCF step   140:          0.01
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #  141 ************************
+ etot  = -6.69776863E-01 abs_ev   =  1.49E-08 rel_ev   =  2.22E-08
+ ediff =        1.49E-08 abs_dens =  5.63E-06 rel_dens =  5.63E-06
+Matrix vector products:     27
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669777    1.000000   ( 4.0E-03)
+
+Elapsed time for SCF step   141:          0.01
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #  142 ************************
+ etot  = -6.69776874E-01 abs_ev   =  1.10E-08 rel_ev   =  1.64E-08
+ ediff =        1.10E-08 abs_dens =  6.44E-06 rel_dens =  6.44E-06
+Matrix vector products:     27
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669777    1.000000   ( 4.0E-03)
+
+Elapsed time for SCF step   142:          0.02
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #  143 ************************
+ etot  = -6.69776888E-01 abs_ev   =  1.37E-08 rel_ev   =  2.04E-08
+ ediff =        1.37E-08 abs_dens =  6.19E-06 rel_dens =  6.19E-06
+Matrix vector products:     27
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669777    1.000000   ( 4.0E-03)
+
+Elapsed time for SCF step   143:          0.02
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #  144 ************************
+ etot  = -6.69776901E-01 abs_ev   =  1.30E-08 rel_ev   =  1.93E-08
+ ediff =        1.30E-08 abs_dens =  6.48E-06 rel_dens =  6.48E-06
+Matrix vector products:     27
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669777    1.000000   ( 3.9E-03)
+
+Elapsed time for SCF step   144:          0.01
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #  145 ************************
+ etot  = -6.69776915E-01 abs_ev   =  1.46E-08 rel_ev   =  2.19E-08
+ ediff =        1.46E-08 abs_dens =  5.35E-06 rel_dens =  5.35E-06
+Matrix vector products:     27
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669777    1.000000   ( 3.9E-03)
+
+Elapsed time for SCF step   145:          0.01
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #  146 ************************
+ etot  = -6.69776929E-01 abs_ev   =  1.38E-08 rel_ev   =  2.06E-08
+ ediff =        1.38E-08 abs_dens =  5.88E-06 rel_dens =  5.88E-06
+Matrix vector products:     27
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669777    1.000000   ( 3.8E-03)
+
+Elapsed time for SCF step   146:          0.01
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #  147 ************************
+ etot  = -6.69776944E-01 abs_ev   =  1.49E-08 rel_ev   =  2.22E-08
+ ediff =        1.49E-08 abs_dens =  4.96E-06 rel_dens =  4.96E-06
+Matrix vector products:     27
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669777    1.000000   ( 3.8E-03)
+
+Elapsed time for SCF step   147:          0.01
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #  148 ************************
+ etot  = -6.69776957E-01 abs_ev   =  1.33E-08 rel_ev   =  1.98E-08
+ ediff =        1.33E-08 abs_dens =  4.58E-06 rel_dens =  4.58E-06
+Matrix vector products:     27
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669777    1.000000   ( 3.7E-03)
+
+Elapsed time for SCF step   148:          0.01
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #  149 ************************
+ etot  = -6.69776974E-01 abs_ev   =  1.68E-08 rel_ev   =  2.51E-08
+ ediff =        1.68E-08 abs_dens =  3.12E-06 rel_dens =  3.12E-06
+Matrix vector products:     27
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669777    1.000000   ( 3.7E-03)
+
+Elapsed time for SCF step   149:          0.01
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #  150 ************************
+ etot  = -6.69776989E-01 abs_ev   =  1.54E-08 rel_ev   =  2.30E-08
+ ediff =        1.54E-08 abs_dens =  5.05E-06 rel_dens =  5.05E-06
+Matrix vector products:     27
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669777    1.000000   ( 3.6E-03)
+
+Elapsed time for SCF step   150:          0.01
+**********************************************************************
+
+
+             Info: Writing states. 2025/03/25 at 20:43:21
+
+
+        Info: Finished writing states. 2025/03/25 at 20:43:21
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #  151 ************************
+ etot  = -6.69777007E-01 abs_ev   =  1.77E-08 rel_ev   =  2.64E-08
+ ediff =        1.77E-08 abs_dens =  4.83E-06 rel_dens =  4.83E-06
+Matrix vector products:     22
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669777    1.000000   ( 3.5E-03)
+
+Elapsed time for SCF step   151:          0.03
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #  152 ************************
+ etot  = -6.69777020E-01 abs_ev   =  1.32E-08 rel_ev   =  1.97E-08
+ ediff =        1.32E-08 abs_dens =  8.12E-06 rel_dens =  8.12E-06
+Matrix vector products:     27
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669777    1.000000   ( 3.5E-03)
+
+Elapsed time for SCF step   152:          0.01
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #  153 ************************
+ etot  = -6.69777032E-01 abs_ev   =  1.18E-08 rel_ev   =  1.76E-08
+ ediff =        1.18E-08 abs_dens =  5.90E-06 rel_dens =  5.90E-06
+Matrix vector products:     18
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669777    1.000000   ( 3.4E-03)
+
+Elapsed time for SCF step   153:          0.00
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #  154 ************************
+ etot  = -6.69777043E-01 abs_ev   =  1.11E-08 rel_ev   =  1.66E-08
+ ediff =        1.11E-08 abs_dens =  6.58E-06 rel_dens =  6.58E-06
+Matrix vector products:     27
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669777    1.000000   ( 3.4E-03)
+
+Elapsed time for SCF step   154:          0.01
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #  155 ************************
+ etot  = -6.69777054E-01 abs_ev   =  1.04E-08 rel_ev   =  1.55E-08
+ ediff =        1.04E-08 abs_dens =  5.57E-06 rel_dens =  5.57E-06
+Matrix vector products:     23
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669777    1.000000   ( 3.3E-03)
+
+Elapsed time for SCF step   155:          0.01
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #  156 ************************
+ etot  = -6.69777063E-01 abs_ev   =  8.95E-09 rel_ev   =  1.34E-08
+ ediff =        8.95E-09 abs_dens =  6.99E-06 rel_dens =  6.99E-06
+Matrix vector products:     27
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669777    1.000000   ( 3.3E-03)
+
+Elapsed time for SCF step   156:          0.01
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #  157 ************************
+ etot  = -6.69777072E-01 abs_ev   =  9.17E-09 rel_ev   =  1.37E-08
+ ediff =        9.17E-09 abs_dens =  6.10E-06 rel_dens =  6.10E-06
+Matrix vector products:     27
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669777    1.000000   ( 3.3E-03)
+
+Elapsed time for SCF step   157:          0.01
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #  158 ************************
+ etot  = -6.69777079E-01 abs_ev   =  7.23E-09 rel_ev   =  1.08E-08
+ ediff =        7.23E-09 abs_dens =  6.85E-06 rel_dens =  6.85E-06
+Matrix vector products:     27
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669777    1.000000   ( 3.2E-03)
+
+Elapsed time for SCF step   158:          0.01
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #  159 ************************
+ etot  = -6.69777087E-01 abs_ev   =  7.51E-09 rel_ev   =  1.12E-08
+ ediff =        7.51E-09 abs_dens =  5.97E-06 rel_dens =  5.97E-06
+Matrix vector products:     27
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669777    1.000000   ( 3.2E-03)
+
+Elapsed time for SCF step   159:          0.00
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #  160 ************************
+ etot  = -6.69777093E-01 abs_ev   =  6.70E-09 rel_ev   =  1.00E-08
+ ediff =        6.70E-09 abs_dens =  6.60E-06 rel_dens =  6.60E-06
+Matrix vector products:     27
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669777    1.000000   ( 3.2E-03)
+
+Elapsed time for SCF step   160:          0.01
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #  161 ************************
+ etot  = -6.69777101E-01 abs_ev   =  7.58E-09 rel_ev   =  1.13E-08
+ ediff =        7.58E-09 abs_dens =  5.78E-06 rel_dens =  5.78E-06
+Matrix vector products:     27
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669777    1.000000   ( 3.1E-03)
+
+Elapsed time for SCF step   161:          0.01
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #  162 ************************
+ etot  = -6.69777107E-01 abs_ev   =  6.56E-09 rel_ev   =  9.79E-09
+ ediff =        6.56E-09 abs_dens =  5.96E-06 rel_dens =  5.96E-06
+Matrix vector products:     27
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669777    1.000000   ( 3.1E-03)
+
+Elapsed time for SCF step   162:          0.01
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #  163 ************************
+ etot  = -6.69777115E-01 abs_ev   =  7.42E-09 rel_ev   =  1.11E-08
+ ediff =        7.42E-09 abs_dens =  5.23E-06 rel_dens =  5.23E-06
+Matrix vector products:     27
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669777    1.000000   ( 3.1E-03)
+
+Elapsed time for SCF step   163:          0.01
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #  164 ************************
+ etot  = -6.69777116E-01 abs_ev   =  1.57E-09 rel_ev   =  2.34E-09
+ ediff =        1.57E-09 abs_dens =  2.44E-06 rel_dens =  2.44E-06
+Matrix vector products:      5
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669777    1.000000   ( 3.1E-03)
+
+Elapsed time for SCF step   164:          0.01
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #  165 ************************
+ etot  = -6.69777127E-01 abs_ev   =  1.02E-08 rel_ev   =  1.53E-08
+ ediff =        1.02E-08 abs_dens =  6.83E-06 rel_dens =  6.83E-06
+Matrix vector products:     27
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669777    1.000000   ( 3.0E-03)
+
+Elapsed time for SCF step   165:          0.01
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #  166 ************************
+ etot  = -6.69777133E-01 abs_ev   =  6.11E-09 rel_ev   =  9.12E-09
+ ediff =        6.11E-09 abs_dens =  6.04E-06 rel_dens =  6.04E-06
+Matrix vector products:     14
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669777    1.000000   ( 3.0E-03)
+
+Elapsed time for SCF step   166:          0.01
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #  167 ************************
+ etot  = -6.69777150E-01 abs_ev   =  1.76E-08 rel_ev   =  2.63E-08
+ ediff =        1.76E-08 abs_dens =  8.28E-06 rel_dens =  8.28E-06
+Matrix vector products:     27
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669777    1.000000   ( 2.9E-03)
+
+Elapsed time for SCF step   167:          0.01
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #  168 ************************
+ etot  = -6.69777166E-01 abs_ev   =  1.54E-08 rel_ev   =  2.31E-08
+ ediff =        1.54E-08 abs_dens =  9.63E-06 rel_dens =  9.63E-06
+Matrix vector products:     22
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669777    1.000000   ( 2.9E-03)
+
+Elapsed time for SCF step   168:          0.01
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #  169 ************************
+ etot  = -6.69777182E-01 abs_ev   =  1.60E-08 rel_ev   =  2.39E-08
+ ediff =        1.60E-08 abs_dens =  8.08E-06 rel_dens =  8.08E-06
+Matrix vector products:     27
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669777    1.000000   ( 2.8E-03)
+
+Elapsed time for SCF step   169:          0.01
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #  170 ************************
+ etot  = -6.69777201E-01 abs_ev   =  1.93E-08 rel_ev   =  2.88E-08
+ ediff =        1.93E-08 abs_dens =  9.90E-06 rel_dens =  9.90E-06
+Matrix vector products:     22
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669777    1.000000   ( 2.7E-03)
+
+Elapsed time for SCF step   170:          0.01
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #  171 ************************
+ etot  = -6.69777287E-01 abs_ev   =  8.60E-08 rel_ev   =  1.28E-07
+ ediff =        8.60E-08 abs_dens =  1.14E-05 rel_dens =  1.14E-05
+Matrix vector products:     27
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669777    1.000000   ( 2.2E-03)
+
+Elapsed time for SCF step   171:          0.01
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #  172 ************************
+ etot  = -6.69777334E-01 abs_ev   =  4.71E-08 rel_ev   =  7.03E-08
+ ediff =        4.71E-08 abs_dens =  1.70E-05 rel_dens =  1.70E-05
+Matrix vector products:     11
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669777    1.000000   ( 1.9E-03)
+
+Elapsed time for SCF step   172:          0.01
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #  173 ************************
+ etot  = -6.69777340E-01 abs_ev   =  5.95E-09 rel_ev   =  8.89E-09
+ ediff =        5.95E-09 abs_dens =  6.24E-06 rel_dens =  6.24E-06
+Matrix vector products:     20
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669777    1.000000   ( 1.8E-03)
+
+Elapsed time for SCF step   173:          0.01
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #  174 ************************
+ etot  = -6.69777347E-01 abs_ev   =  7.24E-09 rel_ev   =  1.08E-08
+ ediff =        7.24E-09 abs_dens =  3.61E-06 rel_dens =  3.61E-06
+Matrix vector products:     27
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669777    1.000000   ( 1.8E-03)
+
+Elapsed time for SCF step   174:          0.01
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #  175 ************************
+ etot  = -6.69777356E-01 abs_ev   =  8.84E-09 rel_ev   =  1.32E-08
+ ediff =        8.84E-09 abs_dens =  5.40E-06 rel_dens =  5.40E-06
+Matrix vector products:     16
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669777    1.000000   ( 1.7E-03)
+
+Elapsed time for SCF step   175:          0.01
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #  176 ************************
+ etot  = -6.69777361E-01 abs_ev   =  4.84E-09 rel_ev   =  7.22E-09
+ ediff =        4.84E-09 abs_dens =  4.62E-06 rel_dens =  4.62E-06
+Matrix vector products:     27
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669777    1.000000   ( 1.7E-03)
+
+Elapsed time for SCF step   176:          0.01
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #  177 ************************
+ etot  = -6.69777364E-01 abs_ev   =  3.26E-09 rel_ev   =  4.86E-09
+ ediff =        3.26E-09 abs_dens =  5.68E-06 rel_dens =  5.68E-06
+Matrix vector products:     20
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669777    1.000000   ( 1.7E-03)
+
+Elapsed time for SCF step   177:          0.01
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #  178 ************************
+ etot  = -6.69777368E-01 abs_ev   =  3.52E-09 rel_ev   =  5.26E-09
+ ediff =        3.52E-09 abs_dens =  4.50E-06 rel_dens =  4.50E-06
+Matrix vector products:     27
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669777    1.000000   ( 1.6E-03)
+
+Elapsed time for SCF step   178:          0.01
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #  179 ************************
+ etot  = -6.69777372E-01 abs_ev   =  3.69E-09 rel_ev   =  5.51E-09
+ ediff =        3.69E-09 abs_dens =  4.81E-06 rel_dens =  4.81E-06
+Matrix vector products:     18
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669777    1.000000   ( 1.6E-03)
+
+Elapsed time for SCF step   179:          0.01
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #  180 ************************
+ etot  = -6.69777374E-01 abs_ev   =  2.77E-09 rel_ev   =  4.14E-09
+ ediff =        2.77E-09 abs_dens =  3.12E-06 rel_dens =  3.12E-06
+Matrix vector products:     27
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669777    1.000000   ( 1.6E-03)
+
+Elapsed time for SCF step   180:          0.01
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #  181 ************************
+ etot  = -6.69777377E-01 abs_ev   =  2.86E-09 rel_ev   =  4.27E-09
+ ediff =        2.86E-09 abs_dens =  2.79E-06 rel_dens =  2.79E-06
+Matrix vector products:     18
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669777    1.000000   ( 1.6E-03)
+
+Elapsed time for SCF step   181:          0.01
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #  182 ************************
+ etot  = -6.69777380E-01 abs_ev   =  2.75E-09 rel_ev   =  4.11E-09
+ ediff =        2.75E-09 abs_dens =  5.27E-06 rel_dens =  5.27E-06
+Matrix vector products:     27
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669777    1.000000   ( 1.5E-03)
+
+Elapsed time for SCF step   182:          0.01
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #  183 ************************
+ etot  = -6.69777382E-01 abs_ev   =  1.66E-09 rel_ev   =  2.47E-09
+ ediff =        1.66E-09 abs_dens =  5.44E-06 rel_dens =  5.44E-06
+Matrix vector products:      6
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669777    1.000000   ( 1.5E-03)
+
+Elapsed time for SCF step   183:          0.01
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #  184 ************************
+ etot  = -6.69777384E-01 abs_ev   =  2.04E-09 rel_ev   =  3.05E-09
+ ediff =        2.04E-09 abs_dens =  4.43E-06 rel_dens =  4.43E-06
+Matrix vector products:     27
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669777    1.000000   ( 1.5E-03)
+
+Elapsed time for SCF step   184:          0.00
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #  185 ************************
+ etot  = -6.69777385E-01 abs_ev   =  1.14E-09 rel_ev   =  1.70E-09
+ ediff =        1.14E-09 abs_dens =  5.63E-06 rel_dens =  5.63E-06
+Matrix vector products:      5
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669777    1.000000   ( 1.5E-03)
+
+Elapsed time for SCF step   185:          0.01
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #  186 ************************
+ etot  = -6.69777390E-01 abs_ev   =  4.79E-09 rel_ev   =  7.15E-09
+ ediff =        4.79E-09 abs_dens =  3.59E-06 rel_dens =  3.59E-06
+Matrix vector products:     27
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669777    1.000000   ( 1.4E-03)
+
+Elapsed time for SCF step   186:          0.00
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #  187 ************************
+ etot  = -6.69777393E-01 abs_ev   =  3.57E-09 rel_ev   =  5.33E-09
+ ediff =        3.57E-09 abs_dens =  4.57E-06 rel_dens =  4.57E-06
+Matrix vector products:     20
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669777    1.000000   ( 1.4E-03)
+
+Elapsed time for SCF step   187:          0.01
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #  188 ************************
+ etot  = -6.69777396E-01 abs_ev   =  2.91E-09 rel_ev   =  4.34E-09
+ ediff =        2.91E-09 abs_dens =  4.08E-06 rel_dens =  4.08E-06
+Matrix vector products:     27
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669777    1.000000   ( 1.4E-03)
+
+Elapsed time for SCF step   188:          0.01
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #  189 ************************
+ etot  = -6.69777399E-01 abs_ev   =  3.32E-09 rel_ev   =  4.96E-09
+ ediff =        3.32E-09 abs_dens =  5.55E-06 rel_dens =  5.55E-06
+Matrix vector products:     18
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669777    1.000000   ( 1.3E-03)
+
+Elapsed time for SCF step   189:          0.01
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #  190 ************************
+ etot  = -6.69777406E-01 abs_ev   =  6.60E-09 rel_ev   =  9.85E-09
+ ediff =        6.60E-09 abs_dens =  2.18E-06 rel_dens =  2.18E-06
+Matrix vector products:     27
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669777    1.000000   ( 1.3E-03)
+
+Elapsed time for SCF step   190:          0.01
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #  191 ************************
+ etot  = -6.69777412E-01 abs_ev   =  6.44E-09 rel_ev   =  9.61E-09
+ ediff =        6.44E-09 abs_dens =  3.91E-06 rel_dens =  3.91E-06
+Matrix vector products:     17
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669777    1.000000   ( 1.2E-03)
+
+Elapsed time for SCF step   191:          0.01
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #  192 ************************
+ etot  = -6.69777414E-01 abs_ev   =  2.05E-09 rel_ev   =  3.06E-09
+ ediff =        2.05E-09 abs_dens =  2.56E-06 rel_dens =  2.56E-06
+Matrix vector products:     27
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669777    1.000000   ( 1.2E-03)
+
+Elapsed time for SCF step   192:          0.00
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #  193 ************************
+ etot  = -6.69777416E-01 abs_ev   =  1.83E-09 rel_ev   =  2.74E-09
+ ediff =        1.83E-09 abs_dens =  1.17E-06 rel_dens =  1.17E-06
+Matrix vector products:     21
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669777    1.000000   ( 1.2E-03)
+
+Elapsed time for SCF step   193:          0.01
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #  194 ************************
+ etot  = -6.69777418E-01 abs_ev   =  1.90E-09 rel_ev   =  2.84E-09
+ ediff =        1.90E-09 abs_dens =  2.76E-06 rel_dens =  2.76E-06
+Matrix vector products:     27
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669777    1.000000   ( 1.1E-03)
+
+Elapsed time for SCF step   194:          0.01
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #  195 ************************
+ etot  = -6.69777419E-01 abs_ev   =  1.08E-09 rel_ev   =  1.61E-09
+ ediff =        1.08E-09 abs_dens =  4.71E-06 rel_dens =  4.71E-06
+Matrix vector products:      6
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669777    1.000000   ( 1.1E-03)
+
+Elapsed time for SCF step   195:          0.01
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #  196 ************************
+ etot  = -6.69777421E-01 abs_ev   =  1.29E-09 rel_ev   =  1.92E-09
+ ediff =        1.29E-09 abs_dens =  2.00E-06 rel_dens =  2.00E-06
+Matrix vector products:     27
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669777    1.000000   ( 1.1E-03)
+
+Elapsed time for SCF step   196:          0.01
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #  197 ************************
+ etot  = -6.69777421E-01 abs_ev   =  7.74E-10 rel_ev   =  1.16E-09
+ ediff =        7.74E-10 abs_dens =  1.81E-06 rel_dens =  1.81E-06
+Matrix vector products:      6
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669777    1.000000   ( 1.1E-03)
+
+Elapsed time for SCF step   197:          0.01
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #  198 ************************
+ etot  = -6.69777424E-01 abs_ev   =  2.41E-09 rel_ev   =  3.60E-09
+ ediff =        2.41E-09 abs_dens =  2.69E-06 rel_dens =  2.69E-06
+Matrix vector products:     27
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669777    1.000000   ( 1.1E-03)
+
+Elapsed time for SCF step   198:          0.01
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #  199 ************************
+ etot  = -6.69777426E-01 abs_ev   =  2.57E-09 rel_ev   =  3.84E-09
+ ediff =        2.57E-09 abs_dens =  2.35E-06 rel_dens =  2.35E-06
+Matrix vector products:     20
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669777    1.000000   ( 1.0E-03)
+
+Elapsed time for SCF step   199:          0.01
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #  200 ************************
+ etot  = -6.69777428E-01 abs_ev   =  1.76E-09 rel_ev   =  2.63E-09
+ ediff =        1.76E-09 abs_dens =  2.42E-06 rel_dens =  2.42E-06
+Matrix vector products:     27
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669777    1.000000   ( 1.0E-03)
+
+Elapsed time for SCF step   200:          0.01
+**********************************************************************
+
+
+             Info: Writing states. 2025/03/25 at 20:43:21
+
+
+        Info: Finished writing states. 2025/03/25 at 20:43:21
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #  201 ************************
+ etot  = -6.69777430E-01 abs_ev   =  1.64E-09 rel_ev   =  2.45E-09
+ ediff =        1.64E-09 abs_dens =  1.51E-06 rel_dens =  1.51E-06
+Matrix vector products:      9
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669777    1.000000   ( 9.9E-04)
+
+Elapsed time for SCF step   201:          0.08
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #  202 ************************
+ etot  = -6.69777431E-01 abs_ev   =  8.26E-10 rel_ev   =  1.23E-09
+ ediff =        8.26E-10 abs_dens =  1.80E-06 rel_dens =  1.80E-06
+Matrix vector products:     27
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669777    1.000000   ( 9.8E-04)
+
+Elapsed time for SCF step   202:          0.01
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #  203 ************************
+ etot  = -6.69777431E-01 abs_ev   =  7.13E-10 rel_ev   =  1.06E-09
+ ediff =        7.13E-10 abs_dens =  1.86E-06 rel_dens =  1.86E-06
+Matrix vector products:     27
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669777    1.000000   ( 9.7E-04)
+
+Elapsed time for SCF step   203:          0.01
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #  204 ************************
+ etot  = -6.69777432E-01 abs_ev   =  5.77E-10 rel_ev   =  8.61E-10
+ ediff =        5.77E-10 abs_dens =  1.21E-06 rel_dens =  1.21E-06
+Matrix vector products:     27
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669777    1.000000   ( 9.6E-04)
+
+Elapsed time for SCF step   204:          0.01
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #  205 ************************
+ etot  = -6.69777432E-01 abs_ev   =  5.75E-10 rel_ev   =  8.58E-10
+ ediff =        5.75E-10 abs_dens =  1.08E-06 rel_dens =  1.08E-06
+Matrix vector products:     27
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669777    1.000000   ( 9.6E-04)
+
+Elapsed time for SCF step   205:          0.01
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #  206 ************************
+ etot  = -6.69777433E-01 abs_ev   =  6.08E-10 rel_ev   =  9.07E-10
+ ediff =        6.08E-10 abs_dens =  1.02E-06 rel_dens =  1.02E-06
+Matrix vector products:     27
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669777    1.000000   ( 9.5E-04)
+
+Elapsed time for SCF step   206:          0.01
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #  207 ************************
+ etot  = -6.69777434E-01 abs_ev   =  6.01E-10 rel_ev   =  8.97E-10
+ ediff =        6.01E-10 abs_dens =  1.10E-06 rel_dens =  1.10E-06
+Matrix vector products:     27
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669777    1.000000   ( 9.4E-04)
+
+Elapsed time for SCF step   207:          0.01
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #  208 ************************
+ etot  = -6.69777434E-01 abs_ev   =  7.08E-10 rel_ev   =  1.06E-09
+ ediff =        7.08E-10 abs_dens =  9.62E-07 rel_dens =  9.62E-07
+Matrix vector products:     27
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669777    1.000000   ( 9.3E-04)
+
+Elapsed time for SCF step   208:          0.01
+**********************************************************************
+
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+
+*********************** SCF CYCLE ITER #  209 ************************
+ etot  = -6.69777435E-01 abs_ev   =  6.37E-10 rel_ev   =  9.51E-10
+ ediff =        6.37E-10 abs_dens =  6.00E-07 rel_dens =  6.00E-07
+Matrix vector products:     27
+Converged eigenvectors:      0
+
+#  State  Eigenvalue [H]  Occupation    Error
+      1       -0.669777    1.000000   ( 9.2E-04)
+
+Elapsed time for SCF step   209:          0.01
+**********************************************************************
+
+
+             Info: Writing states. 2025/03/25 at 20:43:22
+
+
+        Info: Finished writing states. 2025/03/25 at 20:43:22
+
+Info: SCF converged in  209 iterations
+
+
+** Warning:
+**   Some of the states are not fully converged!
+
+Info: Number of matrix-vector products:       5254
+Info: Finished writing information to 'restart/gs'.
+
+             Calculation ended on 2025/03/25 at 20:43:22
+
+                          Walltime:  02.577s
+
+Octopus emitted 1 warning.

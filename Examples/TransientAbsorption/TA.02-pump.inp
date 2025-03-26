@@ -1,0 +1,55 @@
+
+CalculationMode = td 
+Dimensions = 1
+PeriodicDimensions = 1
+FromScratch = yes
+
+%Species
+"Hydrogen1D" | species_soft_coulomb | softening | 1 | valence | 1
+%
+
+ll = 1.6
+%Coordinates
+"Hydrogen1D" | -ll/2
+"Hydrogen1D" |  ll/2
+%
+
+BoxShape = parallelepiped
+
+%LatticeParameters
+ 3.6 
+%
+
+Spacing = 0.5
+
+%KPointsGrid
+ 100
+%
+
+ExtraStates = 0
+
+electric_amplitude = (sqrt(10^10)/sqrt(3.509470*10^16))
+# Frequency corresponding to 3200nm.
+omega = 0.0141375
+period = 2*pi/omega
+stime = 4*period
+
+%TDExternalFields
+ vector_potential | 1.0 | 0.0 | 0.0 | omega | "envelope_function"
+%
+
+%TDFunctions
+"envelope_function" | tdf_from_expr | "electric_amplitude/omega*c*(sin(pi/stime*t))^2*step(stime-t)"
+%
+
+%TDOutput
+ total_current
+%
+
+
+TDTimeStep = 1.0
+TDPropagator = aetrs
+TDPropagationTime = 800 + stime
+TDExponentialMethod = lanczos
+
+
